@@ -19,14 +19,14 @@ public class Test {
         String a = result1.toString();
         System.out.println(a);*/
 
-        String body = JsonFileUtils.readJson("/json/zpm/request/mbfindPageByQuery.json").toJSONString();
+/*        String body = JsonFileUtils.readJson("/json/zpm/request/mbfindPageByQuery.json").toJSONString();
         String result = codingTemplates.findPageByQuery(body);
         String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
         System.out.println(id);
         JSONArray list = new JSONArray();
         list.add(id);
-        System.out.println(list);
-
+        System.out.println(list);*/
+        System.out.println("哈喽");
 
 
 
