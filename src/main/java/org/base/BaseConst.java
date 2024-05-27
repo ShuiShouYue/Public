@@ -1,5 +1,5 @@
 package org.base;
 
 public class BaseConst {
-    public static final String Token = "Bearer 7bf7c7d0-6e7f-4959-a07f-7d5f97c22315";
+    public static final String Token = "Bearer 3e67b05b-18b0-45e3-9602-7b5f9ba87849";
 }

@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 @Slf4j
+/**
+ * 此类包含了首页和模版
+ */
 public class CodingTemplatesTest {
 
     CodingTemplates codingTemplates = new CodingTemplates();

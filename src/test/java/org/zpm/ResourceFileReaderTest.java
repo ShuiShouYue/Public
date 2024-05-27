@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.util.HashMap;
 
 @Slf4j
-
+/**
+ * 此类包含了品类码
+ */
 public class ResourceFileReaderTest{
     SamplingProduct samplingProduct = new SamplingProduct();
 
@@ -26,10 +28,10 @@ public class ResourceFileReaderTest{
         String message1 = "该浙品码在本系统中已存在，无法再次添加";
 /*        String message1 = "重复操作";*/
         String result1 = JSONObject.parseObject(result).getString("message");
-        Assert.assertEquals(message,result1);
+        Assert.assertEquals(result1,message);
         String result2 = samplingProduct.plmSave(body);
         String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(message1,result3);
+        Assert.assertEquals(result3,message1);
     }
 
     @Test(testName ="品类码列表页查询校验",priority = 2)
@@ -39,7 +41,7 @@ public class ResourceFileReaderTest{
         String result = samplingProduct.findPageCompanyProduct(body);
         String message = "杭州丝绸2";
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("ProductName");
-        Assert.assertEquals(message,result1);
+        Assert.assertEquals(result1,message);
     }
 
     @Test(testName ="品类码删除校验",priority = 3)
@@ -57,7 +59,7 @@ public class ResourceFileReaderTest{
         String result1 = samplingProduct.setProductQRCodeInvalid(parameters);
         String result2 =JSONObject.parseObject(result1).getString("message");
         String message2 = "非法参数";
-        Assert.assertEquals(message2,result2);
+        Assert.assertEquals(result2,message2);
     }
 
 /*    public static void main(String[] args) throws IOException {
