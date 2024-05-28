@@ -53,4 +53,6 @@ public class BasePath {
     //单品码删除
     public static final String SINGLE_ITEM_DELETE = "/api/gm2d/serialCode/delete";
 
+    //-------------------------------接口路径-------------------------------------
+
 }

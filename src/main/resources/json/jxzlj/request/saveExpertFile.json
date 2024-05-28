@@ -1,0 +1,31 @@
+{
+  "expertFiles": [{
+    "id": "6c103d5c2cec487ba457a7a2a4bdc69b",
+    "createTime": "2024-05-22 15:01:17",
+    "updateTime": "2024-05-22 15:01:17",
+    "createUser": "qo_01",
+    "createUserNickname": "qo_01",
+    "updateUser": "qo_01",
+    "updateUserNikename": "qo_01",
+    "attr1": null,
+    "attr2": null,
+    "attr3": null,
+    "attr4": null,
+    "attr5": null,
+    "yn": 1,
+    "name": "6972137304327.zip",
+    "isimg": 0,
+    "contentType": "application/x-zip-compressed",
+    "size": 167094,
+    "path": "/home/app/jxqb/files/localFile/2024-05-22/385ebe35982a4e16be9ef4a49f086ba5.zip",
+    "url": "http://192.168.82.164:10063/api/jxqb/jxqb//statics/2024-05-22/385ebe35982a4e16be9ef4a49f086ba5.zip",
+    "source": "LOCAL",
+    "remark": null,
+    "thumbnail": false,
+    "uid": 1716361276300,
+    "status": "success"
+  }],
+  "advices": "通过",
+  "id": "835099e1ebb348ef8bc71627b90fa363",
+  "flowStatus": 40
+}

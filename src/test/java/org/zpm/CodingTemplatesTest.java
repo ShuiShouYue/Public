@@ -1,18 +1,14 @@
 package org.zpm;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.base.BasePath;
-import org.service.zpm.CodingTemplates;
+import org.service.xzpm.CodingTemplates;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Properties;
 
 @Slf4j
 /**
@@ -42,7 +38,7 @@ public class CodingTemplatesTest {
     @Test(testName ="模版创建校验",priority = 2)
     //模版创建校验
     public void templatesSaveTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/zpm/request/templatesSave.json").toJSONString();
+        String body = JsonFileUtils.readJson("/json/xzpm/request/templatesSave.json").toJSONString();
         String result = codingTemplates.templatesSave(body);
         String message = "成功";
         String message1 = "模板名称重复,换一个试试!";
@@ -56,7 +52,7 @@ public class CodingTemplatesTest {
     @Test(testName ="模版列表页查询校验",priority = 3)
     //模版列表页查询校验
     public void findPageByQueryTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/zpm/request/mbfindPageByQuery.json").toJSONString();
+        String body = JsonFileUtils.readJson("/json/xzpm/request/mbfindPageByQuery.json").toJSONString();
         String result = codingTemplates.findPageByQuery(body);
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("templateName");
         String message = "模版一";
@@ -66,7 +62,7 @@ public class CodingTemplatesTest {
     @Test(testName ="模版删除校验",priority = 4)
     //模版删除
     public void templatesDeleteTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/zpm/request/mbfindPageByQuery.json").toJSONString();
+        String body = JsonFileUtils.readJson("/json/xzpm/request/mbfindPageByQuery.json").toJSONString();
         String result = codingTemplates.findPageByQuery(body);
         String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
         log.info("模板ID："+id);

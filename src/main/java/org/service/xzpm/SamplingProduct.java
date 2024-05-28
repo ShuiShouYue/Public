@@ -1,4 +1,4 @@
-package org.service.zpm;
+package org.service.xzpm;
 
 import org.base.BaseConst;
 import org.base.BasePath;
@@ -12,7 +12,7 @@ public class SamplingProduct {
      */
     public String plmSave(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.SAMPLING_PRODUCT_SAVE;
         String response = http.post(token,url,body);
         return response;
@@ -23,7 +23,7 @@ public class SamplingProduct {
      */
     public String findPageCompanyProduct(String body) throws IOException{
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.SAMPLING_PRODUCT_FIND;
         String response = http.post(token,url,body);
         return response;
@@ -35,7 +35,7 @@ public class SamplingProduct {
      */
     public String findById(String url) throws IOException{
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String response = http.get(token,url);
         return response;
     }
@@ -46,7 +46,7 @@ public class SamplingProduct {
     public String setProductQRCodeInvalid(String body) throws IOException{
         Http http = new Http();
         String url = BasePath.ZPM_IP + BasePath.SAMPLING_PRODUCT_DELETE;
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String response = http.post(token,url,body);
         return response;
     }

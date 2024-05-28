@@ -3,7 +3,8 @@
     <test name="测试模块">
         <classes>
             <!-- 需要运行的测试类 -->
-            <class name="org.zpm.CodingTemplatesTest"/>
+<!--            <class name="org.zpm.CodingTemplatesTest"/>-->
+            <class name="org.jxzlj.ApplyTest"/>
         </classes>
     </test>
     <listeners>

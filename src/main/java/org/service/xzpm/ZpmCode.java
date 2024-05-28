@@ -1,4 +1,4 @@
-package org.service.zpm;
+package org.service.xzpm;
 
 import org.base.BaseConst;
 import org.base.BasePath;
@@ -13,7 +13,7 @@ public class ZpmCode {
      */
     public String findPageByQuery(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.BATCH_CODE_DETAILS_FIND;
         String response = http.post(token,url,body);
         return response;
@@ -25,7 +25,7 @@ public class ZpmCode {
      */
     public String saveBatch(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.BATCH_CODE_SAVE;
         String response = http.post(token,url,body);
         return response;
@@ -36,7 +36,7 @@ public class ZpmCode {
      */
     public String findById(String url) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String response = http.get(token,url);
         return response;
     }
@@ -46,7 +46,7 @@ public class ZpmCode {
      */
     public String  deleteBatch(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.BATCH_CODE_DELETE;
         String response = http.post(token,url,body);
         return response;
@@ -57,7 +57,7 @@ public class ZpmCode {
      */
     public String  findPageDpm(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.SINGLE_ITEM_DETAILS_FIND;
         String response = http.post(token,url,body);
         return response;
@@ -68,7 +68,7 @@ public class ZpmCode {
      */
     public String  saveDpm(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.SINGLE_ITEM_SAVE;
         String response = http.post(token,url,body);
         return response;
@@ -79,7 +79,7 @@ public class ZpmCode {
      */
     public String  findByIdDpm(String url) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String response = http.get(token,url);
         return response;
     }
@@ -89,7 +89,7 @@ public class ZpmCode {
      */
     public String  deleteDpmById(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token;
+        String token = BaseConst.Token_xzpm;
         String url = BasePath.ZPM_IP + BasePath.SINGLE_ITEM_DELETE;
         String response = http.post(token,url,body);
         return response;
