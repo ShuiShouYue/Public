@@ -2,8 +2,8 @@
   "pageNum": 1,
   "pageSize": 10,
   "searchTime": [
-    "2023-12-01T00:00:00",
-    "2025-01-01T23:00:00"
+    "2024-05-01T00:00:00",
+    "2025-06-04T23:00:00"
   ],
   "CreditCode": "9133000014291836XX",
   "ProductName": "杭州丝绸",
@@ -11,7 +11,7 @@
   "Category": "3",
   "CompanyName": null,
   "AreaCode": null,
-  "Specifications": "88",
+  "Specifications": "88cm*88cm",
   "CodeType": null,
   "GPCKindCode": "10001699",
   "GPCKindName": "刺绣织物/纺织品"

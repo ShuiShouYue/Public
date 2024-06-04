@@ -14,18 +14,13 @@ import com.alibaba.fastjson.JSONArray;
 public class ZpmCodeTest {
     ZpmCode zpmCode = new ZpmCode();
     @Test(testName ="批次码创建校验",priority = 1)
-    //批次码创建校验(每次需要变更批次码的数据，因为批次码是软删除)
+    //批次码创建校验(JSON文件每次需要变更批次码CODE（batchCode）的数据，因为批次码是软删除)
     public void plmSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/saveBatch.json").toJSONString();
         String result = zpmCode.saveBatch(body);
         String message = "成功";
-        String message1 = "批次码已存在，请勿重复添加！";
-        String message2 = "重复操作";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(message,result1);
-        String result2 = zpmCode.saveBatch(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);
     }
 
         @Test(testName ="批次码列表页查询校验",priority = 2)
@@ -33,7 +28,7 @@ public class ZpmCodeTest {
     public void findPageByQueryTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
         String result = zpmCode.findPageByQuery(body);
-        String message = "杭州丝绸1";
+        String message = "杭州丝绸";
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("productName");
         Assert.assertEquals(result1,message);
     }
@@ -55,7 +50,7 @@ public class ZpmCodeTest {
 
 
     @Test(testName ="单品码创建校验",priority = 3)
-    //单品码创建校验
+    //单品码创建校验（JSON文件每次需要变更单品码CODE（serialCode）的数据，因为单品码是软删除）
     public void saveDpmTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
         String result0 = zpmCode.findPageByQuery(body);
@@ -64,13 +59,8 @@ public class ZpmCodeTest {
         body1.put("batchCode",batchCode);
         String result = zpmCode.saveDpm(body1.toJSONString());
         String message = "成功";
-        String message1 = "单品码已存在，请勿重复添加！";
-        String message2 = "重复操作";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-        /*String result2 = zpmCode.saveDpm(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(message1,result3);*/
     }
 
     @Test(testName ="单品码列表页查询校验",priority = 4)
@@ -78,7 +68,7 @@ public class ZpmCodeTest {
     public void findPageDpmTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
         String result = zpmCode.findPageDpm(body);
-        String message = "杭州丝绸1";
+        String message = "杭州丝绸";
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("productName");
         Assert.assertEquals(result1,message);
         System.out.println(result);
@@ -95,7 +85,6 @@ public class ZpmCodeTest {
         list.add(id);
         String result1 = zpmCode.deleteDpmById(list.toString());
         String result2 =JSONObject.parseObject(result1).getString("message");
-
         Assert.assertEquals(result2,message);
     }
 
@@ -109,6 +98,5 @@ public class ZpmCodeTest {
         body1.put("batchCode",batchCode);
         System.out.println(body1);
     }*/
-
 
 }

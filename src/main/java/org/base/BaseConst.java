@@ -1,7 +1,7 @@
 package org.base;
 
 public class BaseConst {
-    public static  String Token_xzpm = "Bearer a05eaf6b-a25d-4374-9466-b170f7368aed";
+    public static  String Token_xzpm = "Bearer a2216a18-fc0a-4fc2-b0a7-28bdac8fd5e3";
 
     public BaseConst() {
     }

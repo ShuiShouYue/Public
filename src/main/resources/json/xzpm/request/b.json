@@ -1,3 +1,18 @@
-[
-  "f7bd1b295d714fd9b2f9853bd4c50a5d"
-  ]
+{
+  "templateName": "模版一",
+  "templateRemark": "4月7日",
+  "data": {
+    "list": [{
+      "ProductName": "水泥",
+      "Specifications": "333",
+      "SPCategory": "1"
+    },
+      {
+        "ProductName1": "蚕丝",
+        "Specifications1": "222",
+        "SPCategory1": "444"
+      }
+    ],
+    "templateType": "工许产品"
+  }
+}

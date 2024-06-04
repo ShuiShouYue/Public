@@ -12,7 +12,7 @@ public class BaseConst_JXZLJ {
     //省级
     public static  String Token_zlj_sheng = "Bearer 390e8bfc-efdc-4134-a243-2a8c5a495d29";
     //专家
-    public static  String Token_zlj_zj = "123121";
+    public static  String Token_zlj_zj = "Bearer 121e8bfc-efdc-4134-a243-2a8c5a495d21";
 
     public BaseConst_JXZLJ() {
     }

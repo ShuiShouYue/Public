@@ -18,4 +18,5 @@ public class ResourceFileReader extends AbstractFileReader {
     protected String buildPath(String originalPath) throws IOException {
         return originalPath;
     }
+
 }

@@ -1,5 +1,6 @@
 {
-  "data": "556052485c5d4c07a5a2823b3dcefde0",
-  "message": "成功",
-  "status": 200
+  "templateName": "模版一",
+  "templateRemark": "4月7日",
+  "templateStructure": ["ProductName","水泥","Specifications","333","SPCategory","1"],
+  "templateType": "工许产品"
 }

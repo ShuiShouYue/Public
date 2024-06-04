@@ -18,7 +18,7 @@ public class ResourceFileReaderTest{
     SamplingProduct samplingProduct = new SamplingProduct();
 
     @Test(testName ="品类码创建校验",priority = 1)
-    //品类码创建校验(LatsCode每次需要更新)
+    //品类码创建校验(json文件的LatsCode每次需要更新)
     public void plmSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json").toJSONString();
         String result = samplingProduct.plmSave(body);
@@ -33,13 +33,15 @@ public class ResourceFileReaderTest{
     }
 
     @Test(testName ="品类码列表页查询校验",priority = 2)
-    //品类码列表页查询校验
+    //品类码列表页查询校验（json文件需要与创建的产品名称（ProductName）字段一致）
     public void findPageCompanyProductTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageCompanyProduct.json").toJSONString();
         String result = samplingProduct.findPageCompanyProduct(body);
-        String message = "杭州丝绸2";
+        String message = "杭州丝绸";
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("ProductName");
         Assert.assertEquals(result1,message);
+        String CodeID = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("CodeID");
+        System.out.println(CodeID);
     }
 
     @Test(testName ="品类码删除校验",priority = 3)
@@ -47,16 +49,17 @@ public class ResourceFileReaderTest{
     public void setProductQRCodeInvalidTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageCompanyProduct.json").toJSONString();
         String result = samplingProduct.findPageCompanyProduct(body);
-        String CreditCode = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("CreditCode");
+        String CodeID = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("CodeID");
         String UnifiedCode =JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("UnifiedCode");
 
         HashMap<String, String> objectObjectHashMap = new HashMap<>();
-        objectObjectHashMap.put( "CreditCode" ,CreditCode );
+        objectObjectHashMap.put( "CodeID" ,CodeID );
         objectObjectHashMap.put( "UnifiedCode" ,UnifiedCode );
         String parameters = JSONObject.toJSONString(objectObjectHashMap);
         String result1 = samplingProduct.setProductQRCodeInvalid(parameters);
+        System.out.println(parameters);
         String result2 =JSONObject.parseObject(result1).getString("message");
-        String message2 = "非法参数";
+        String message2 = "成功";
         Assert.assertEquals(result2,message2);
     }
 

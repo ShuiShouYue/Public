@@ -74,17 +74,89 @@ public class Apply {
     }
 
     /**
-     * 专家审核接口
+     * 指派专家接口
      */
-    public String audit_zj(String body) throws IOException {
+    public String applyGroup(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst_JXZLJ.getToken_zlj_zj();
-        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.AUDIT;
+        String token = BaseConst_JXZLJ.getToken_zlj_sheng();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.ASSIGN_EXPERTS;
         String response = http.post(token, url, body);
         return response;
     }
 
 
+    /**
+     * 专家审核接口
+     */
+    public String audit_zj(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_zj();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.AUDIT_ZJ;
+        String response = http.post(token, url, body);
+        return response;
+    }
+
+    /**
+     * 上传任命文件
+     */
+    public String audit_rmwj(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sqr();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.AUDIT;
+        String response = http.post(token, url, body);;
+        return response;
+    }
+
+    /**
+     * 申请人情页查询
+     */
+    public String findById_sqr(String url) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sqr();
+        String response = http.get(token,url);;
+        return response;
+    }
+
+
+    /**
+     * 县级详情页查询
+     */
+    public String findById_xian(String url) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_xian();
+        String response = http.get(token,url);;
+        return response;
+    }
+    /**
+     * 市级详情页查询
+     */
+    public String findById_shi(String url) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_shi();
+        String response = http.get(token,url);;
+        return response;
+
+    }
+
+    /**
+     * 省级详情页查询
+     */
+    public String findById_sheng(String url) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sheng();
+        String response = http.get(token,url);;
+        return response;
+    }
+
+    /**
+     * 专家详情页查询
+     */
+    public String findById_zj(String url) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_zj();
+        String response = http.get(token,url);;
+        return response;
+    }
 
 
 }

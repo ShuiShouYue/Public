@@ -13,6 +13,13 @@ public class BasePath_JXZLJ {
 
     //获取用户信息
     public static final String SUBMIT_ZLGSQ ="/api/jxqb/qo/apply/addQoApply";
-    //获取首页信息
-    public static final String AUDIT="/api/jxqb/qo/apply/audit";
+    //审核接口
+    public static final String AUDIT= "/api/jxqb/qo/apply/audit";
+    //分配专家接口
+    public static final String ASSIGN_EXPERTS ="/api/jxqb/qo/apply/applyGroup";
+    //专家审核接口
+    public static final String AUDIT_ZJ ="/api/jxqb/qo/apply/saveExpertFile";
+    //汇总查询
+    public static final String FIND_BY_ID ="/api/jxqb/qo/apply/findById";
+
 }

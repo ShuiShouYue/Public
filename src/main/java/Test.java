@@ -1,6 +1,8 @@
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSONObject;
+import lombok.val;
 import org.base.BaseConst_JXZLJ;
+import org.base.BasePath_JXZLJ;
 import org.service.jxzlj.Apply;
 import org.service.xzpm.CodingTemplates;
 import org.utils.JsonFileUtils;
@@ -10,10 +12,31 @@ import java.io.IOException;
 
 public class Test {
     public static void main(String[] args) throws IOException {
+        val apply = new Apply();
+        String login = apply.login("fWc7VySov1OGXs208kTajiFZteovxnCOTNnwRDn1f+qwNLWbqbcCxyUybn0+sRowKKW6J24QN/d5JuhyT84FC0hjcwqxemH9lFEVMZHelqXI8QWKA8KrMo5Ca8l06seoYW5YyF6gfynQgVl7S/T2BORYblLF+8P4WnjIrj2EBOk=","mVgnYLLOAuXVGft96zPcZYYx8AuI8R36prFM6G0dzx/AvkSRSmCW6L4BXBMjULXmcobIeRxiM+QaZNJIagTOY9PDp8NlpIYW2FC7lMUYhon7oqMLNTgdYZDl7AW5MKBRW8qp+uy61Md2/DDmwDOg0D/DDIHxzO6MXcNWim6Q544=");
+        BaseConst_JXZLJ.setToken_zlj_zj(login);
+        //查询详细信息取出id
+        String ID = "0114c317d9644076a89feedd874ccff2";
+        String url = BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_BY_ID;
+        String url1 = url+"?id="+ID;
+        String result = apply.findById_zj(url1);
+        System.out.println(result);
+        String id = JSONObject.parseObject(result).getJSONObject("data").getString("id");
+        System.out.println(id);
+
 /*        CodingTemplates codingTemplates = new CodingTemplates();
-        JSONObject result = JsonFileUtils.readJson("/json/xzpm/request/c.json");
-        result.put("data","sdfs");
-        System.out.println(result);*/
+
+        JSONObject result = JsonFileUtils.readJson("/json/jxzlj/request/applyGroup.json");
+        System.out.println(result);
+        result.getJSONArray("applyIds").set(0,"ssss");
+        System.out.println(result);
+        JSONObject response = JsonFileUtils.readJson("/json/xzpm/request/b.json");
+        System.out.println(response);
+        String ProductName1= response.getJSONObject("data").getJSONArray("list").getJSONObject(1).getString("ProductName1");
+        System.out.println(ProductName1);
+        response.getJSONObject("data").getJSONArray("list").getJSONObject(1).put("ProductName1","222");
+
+        System.out.println(response);*/
 
 /*        JSONObject result = JsonFileUtils.readJson("/json/zpm/request/templatesSave.json");
    *//*     result.getJSONObject("data").getJSONArray("list").getJSONObject(0).put("templateName","111");*//*
