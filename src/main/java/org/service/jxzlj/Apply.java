@@ -157,6 +157,58 @@ public class Apply {
         String response = http.get(token,url);;
         return response;
     }
+    /**
+     * 申请人多条件查询
+     */
+    public String findPageByQuery_sqr(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sqr();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_PAGE_BY_QUERY;
+        String response = http.post(token, url, body);;
+        return response;
+    }
+
+    /**
+     * 区/县多条件查询
+     */
+    public String findPageByQuery_xian(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_xian();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_PAGE_BY_QUERY;
+        String response = http.post(token, url, body);;
+        return response;
+    }
+
+    /**
+     * 市多条件查询
+     */
+    public String findPageByQuery_shi(String body) throws IOException {
+            Http http = new Http();
+            String token = BaseConst_JXZLJ.getToken_zlj_shi();
+            String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_PAGE_BY_QUERY;
+            String response = http.post(token, url, body);;
+            return response;
+    }
+    /**
+     * 省多多条件查询
+     */
+    public String findPageByQuery_sheng(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sheng();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_PAGE_BY_QUERY;
+        String response = http.post(token, url, body);;
+        return response;
+    }
+    /**
+     * 专家多条件查询
+     */
+    public String findPageByQuery_zj(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_zj();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_PAGE_BY_QUERY;
+        String response = http.post(token, url, body);;
+        return response;
+    }
 
 
 }

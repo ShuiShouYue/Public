@@ -1,0 +1,23 @@
+{
+  "pageNum": 1,
+  "pageSize": 10,
+  "applyUserId": null,
+  "applyName": "用户1",
+  "educationalBackground": null,
+  "linkPhone": null,
+  "employer": null,
+  "job": null,
+  "position": null,
+  "areaCode": null,
+  "areaName": null,
+  "isFirst": null,
+  "educationTrainingResume": null,
+  "workExperience": null,
+  "qualityProfessionalExperience": null,
+  "selfEvaluation": null,
+  "flowStatus": null,
+  "flowStatusTxt": null,
+  "batchNumber": null,
+  "groupCode": null,
+  "feedback": null
+}

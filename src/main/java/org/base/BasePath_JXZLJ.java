@@ -21,5 +21,6 @@ public class BasePath_JXZLJ {
     public static final String AUDIT_ZJ ="/api/jxqb/qo/apply/saveExpertFile";
     //汇总查询
     public static final String FIND_BY_ID ="/api/jxqb/qo/apply/findById";
-
+    //多条件查询
+    public static final String FIND_PAGE_BY_QUERY ="/api/jxqb/qo/apply/findPageByQuery";
 }
