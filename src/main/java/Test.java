@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class Test {
     public static void main(String[] args) throws IOException {
+
         val apply = new Apply();
         String login = apply.login("fWc7VySov1OGXs208kTajiFZteovxnCOTNnwRDn1f+qwNLWbqbcCxyUybn0+sRowKKW6J24QN/d5JuhyT84FC0hjcwqxemH9lFEVMZHelqXI8QWKA8KrMo5Ca8l06seoYW5YyF6gfynQgVl7S/T2BORYblLF+8P4WnjIrj2EBOk=","mVgnYLLOAuXVGft96zPcZYYx8AuI8R36prFM6G0dzx/AvkSRSmCW6L4BXBMjULXmcobIeRxiM+QaZNJIagTOY9PDp8NlpIYW2FC7lMUYhon7oqMLNTgdYZDl7AW5MKBRW8qp+uy61Md2/DDmwDOg0D/DDIHxzO6MXcNWim6Q544=");
         BaseConst_JXZLJ.setToken_zlj_zj(login);
