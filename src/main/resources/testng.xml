@@ -4,7 +4,8 @@
         <classes>
             <!-- 需要运行的测试类 -->
 <!--            <class name="org.zpm.CodingTemplatesTest"/>-->
-            <class name="org.jxzlj.ApplyTest"/>
+           <!-- <class name="org.jxzlj.ApplyTest"/>-->
+            <class name="org.jxzlj.UploadTest"/>
         </classes>
     </test>
     <listeners>

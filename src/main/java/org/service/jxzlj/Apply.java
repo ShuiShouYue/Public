@@ -17,6 +17,20 @@ public class Apply {
     /**
      * 质量官登录
      */
+    public String login1(String username,String password) throws IOException {
+        Http http = new Http();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.LOGIN;
+        String response = HttpRequest.post(url)
+                .form("username",username,
+                        "password",password)
+                .execute()
+                .body();
+        String token =JSONObject.parseObject(response).getString("token");
+        return token;
+    }
+    /**
+     * 质量官登录
+     */
     public String login(String username,String password) throws IOException {
         Http http = new Http();
         String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.LOGIN;
@@ -218,6 +232,17 @@ public class Apply {
         String token = BaseConst_JXZLJ.getToken_zlj_sqr();
         String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.UPLOAD;
         String response = http.post(token, url, body);;
+        return response;
+    }
+
+    /**
+     * 下载
+     */
+    public String exportArchived(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sqr();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.EXPORTARCHIVED;
+        String response = http.post(token, url, body);
         return response;
     }
 }

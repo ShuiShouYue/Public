@@ -25,4 +25,6 @@ public class BasePath_JXZLJ {
     public static final String FIND_PAGE_BY_QUERY ="/api/jxqb/qo/apply/findPageByQuery";
     //上传
     public static final String UPLOAD ="/api/jxqb/sys/file/rest/upload";
+    //下载
+    public static final String EXPORTARCHIVED ="/api/jxqb/qo/archived/exportArchived";
 }

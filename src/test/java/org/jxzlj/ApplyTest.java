@@ -14,6 +14,7 @@ import java.io.IOException;
 
 /**
  * 测试流程：提交申请-县级通过-市级通过-省级初审通过-分配专家-专家通过并上传文件-综合审核通过-申请人上传任命文件-备案审核通过-查寻详情检查状态为已归档
+ * 申请质量官，所有流程均通过，流程及查询节点校验
  */
 public class ApplyTest {
     Apply apply = new Apply();
@@ -241,7 +242,7 @@ public class ApplyTest {
         Thread.sleep(1000);
     }
 
-    @Test(testName ="省市场监管局，查询此用户详情页",priority = 17)
+    @Test(testName ="省局备案通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（通过）",priority = 17)
     //查询
     public void findByIdTest() throws IOException {
         String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
