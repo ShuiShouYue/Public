@@ -90,7 +90,7 @@ public class LoginTest {
     @Test(testName ="输入账密中间带有空格，登录失败",priority = 1)
 
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void loginTest_6() throws IOException {
+    public void loginTest_6() throws IOException, InterruptedException {
         String login = apply.login1("BszhTJcnL5AYvoGs+7Okn8nrNnLKfOSaW9cVyPo0Ea1gWEnlMqTU4y1rmhKFjR8V+BbWPYeqZSFBKCV/vYYvj95ziQ4W1tS8C6ZG5BIMwvsWFQz5zxBP5ygNjaR/AnJJPtmmMcM6LoyNs+IpccyU4CwzSvZNbwPux4RpdpZL90U=", "IRFtqyl9vm9XeEHlfO9Z5dD6TBoWu57No76L0kTJDjrl3dWup8SMWnbwoaC0bBRvdB39Zq1RNdJDxWqHvB2JmraJNWQ79UQjrUjyie2XDiJKZeC7Xoqe7WCD/uGta7+r3EiqRTt0VZheLfYY3ojC6OpNdAN4G6fJxPmyPowsVTg=");
         System.out.println(login);
         if (login != null){
@@ -101,5 +101,6 @@ public class LoginTest {
         }
         String message = "失败";
         Assert.assertEquals(actual,message);
+        Thread.sleep(1000);
     }
 }

@@ -206,7 +206,7 @@ public class UploadTest {
     @Test(testName ="导出一条数据，能够导出对应的数据，且数据正确",priority = 10)
 
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_9() throws IOException {
+    public void addQoApplyTest_9() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -214,5 +214,6 @@ public class UploadTest {
         jsonObject.put("applyName","1");
         String body = jsonObject.toJSONString();
         String result = apply.exportArchived(body);
+        Thread.sleep(1000);
     }
 }

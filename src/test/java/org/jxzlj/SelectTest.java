@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * 搜索功能校验
  */
-public class selectTest {
+public class SelectTest {
     Apply apply = new Apply();
     @Test(testName ="输入申请人姓名，能够搜索到对应数据",priority = 1)
     public void selectTest_1() throws IOException {
@@ -92,7 +92,7 @@ public class selectTest {
         Assert.assertEquals(flowStatusTxt,message);
     }
     @Test(testName ="搜索时点击重置按钮，能够搜索到对应数据",priority = 7)
-    public void selectTest_7() throws IOException {
+    public void selectTest_7() throws IOException, InterruptedException {
         String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
         BaseConst_JXZLJ.setToken_zlj_sheng(login);
 
@@ -103,5 +103,6 @@ public class selectTest {
         String flowStatusTxt = JSONObject.parseObject(result).getString("message");
         String message = "成功";
         Assert.assertEquals(flowStatusTxt,message);
+        Thread.sleep(1000);
     }
 }

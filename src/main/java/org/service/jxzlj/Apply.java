@@ -245,4 +245,14 @@ public class Apply {
         String response = http.post(token, url, body);
         return response;
     }
+    /**
+     * 申请删除
+     */
+    public String delete(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sqr();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.DELETE;
+        String response = http.post(token, url, body);
+        return response;
+    }
 }
