@@ -15,18 +15,18 @@ import java.io.IOException;
 /**
  * 申请质量官，区/县级审批不通过，流程及查询节点校验
  */
-public class ApplyTest1 {
+public class ApplyRefuseTest1 {
     Apply apply = new Apply();
     Uid uid = new Uid();
     RandomNames randomNames = new RandomNames();
     String ID = "";
+    String name ="";
     @Test(testName ="登录申请人账号，质量官申请并提交",priority = 1)
-    //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
     public void addQoApplyTest() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
-        String name = randomNames.generateChineseName();
+        name = randomNames.generateChineseName();
         String uuid = uid.getRandomString2(32);
         JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/addQoApply.json");
         jsonObject.getJSONArray("declareFiles").getJSONObject(0).put("id",uuid);
@@ -64,7 +64,7 @@ public class ApplyTest1 {
         String flowStatusTxt = JSONObject.parseObject(result).getJSONObject("data").getString("flowStatusTxt");
         String advices = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("flows").getJSONObject(1).getString("advices");
         String message = "已归档";
-        String message1 = "拒绝";
+        String message1 = "不通过";
         Assert.assertEquals(flowStatusTxt,message);
         Assert.assertEquals(advices,message1);
     }

@@ -1,7 +1,5 @@
 package org.jxzlj;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.base.BaseConst_JXZLJ;
 import org.base.BasePath_JXZLJ;
@@ -13,16 +11,19 @@ import org.utils.random.name.RandomNames;
 import org.utils.random.uid.Uid;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class FormTest {
+/**
+ * 申请质量官，区/县级审批退回，流程及查询节点校验
+ */
+public class ApplyReturnTest1 {
     Apply apply = new Apply();
     Uid uid = new Uid();
     RandomNames randomNames = new RandomNames();
     String ID = "";
-    String name ="";
-    @Test(testName ="保存",priority = 1)
-    public void formTest_1() throws IOException, InterruptedException {
+    String name = "";
+    @Test(testName ="登录申请人账号，质量官申请并提交",priority = 1)
+
+    public void addQoApplyTest() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -31,7 +32,6 @@ public class FormTest {
         JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/addQoApply.json");
         jsonObject.getJSONArray("declareFiles").getJSONObject(0).put("id",uuid);
         jsonObject.put("applyName",name);
-        jsonObject.put("status","0");
         String body = jsonObject.toJSONString();
 
         String result = apply.addQoApply(body);
@@ -41,63 +41,55 @@ public class FormTest {
         System.out.println(ID);
         Assert.assertEquals(result1,message);
         Thread.sleep(1000);
+
     }
 
-    @Test(testName ="修改",priority = 2)
-    //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void formTest_2() throws IOException, InterruptedException {
+
+    @Test(testName ="登录区/县级市场监管局账号，区/县级审批退回",priority = 2)
+
+    public void audit_pass_xianTest() throws IOException, InterruptedException {
+        String login = apply.login("Q3YJgDLmc4XCvbGBOBA27Sfm591CPKKd7vg6O20Ab2ZXdExTrEhxOMu4cJ2tcb85RqtPy2B7TqlcEq1muLXzx+Nk1a1vKx8B/v87yunkmNeTi74sVy9ujjJOSHuxm/tCFz1b73QJuKU/w6/ufBdS4v0DHxjRKMPoXBpHmrBkz6k=","cuubBlSXJs0ESHfWaSwdkXMBJZQ72NTWYtYaO692RN/4kNpCBvR5qJjSax5WhL5miVy9soKhVljyXGtMYLvNY/kuS6xlZUBDqWDGNesiYFPnbmD7AtdqeX/jBkj4kl8YZUHPUs1lKRd+rhQbk69VfHk+m59GHx4CD/aHwP3DU3w=");
+        BaseConst_JXZLJ.setToken_zlj_xian(login);
+        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/audit_return.json");
+        jsonObject.put("id",this.ID);
+        String body = jsonObject.toJSONString();
+        String result = apply.audit_xian(body);
+        Thread.sleep(1000);
+    }
+    @Test(testName ="区/县级审批退回，输入姓名，查询用户流转节点，验证流转节点是区县市场监管局审核退回",priority = 3)
+    public void findPageByQuery_1() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
+        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/findPageByQuery.json");
+        jsonObject.put("applyName",this.name);
+        String body = jsonObject.toJSONString();
+        String result = apply.findPageByQuery_sqr(body);
+        String flowStatusTxt = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("flowStatusTxt");
+        String message = "区县市场监管局审核退回";
+        Assert.assertEquals(flowStatusTxt,message);
+        Thread.sleep(1000);
+    }
+
+
+
+    @Test(testName ="登录申请人账号，质量官再次申请并提交",priority = 4)
+    //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
+    public void addQoApply01Test() throws IOException, InterruptedException {
+        String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
+        BaseConst_JXZLJ.setToken_zlj_sqr(login);
         String url = BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_BY_ID;
         String url1 = url+"?id="+this.ID;
         String result = apply.findById_sqr(url1);
         JSONObject jsonObject = JSONObject.parseObject(result).getJSONObject("data");
-        jsonObject.put("applyName","王大锤");
+        jsonObject.put("status","1");
         System.out.println(jsonObject);
-        String body = jsonObject.toJSONString();
-        String result1 = apply.addQoApply(body);
+
+        String result1 = apply.addQoApply(jsonObject.toJSONString());
+        System.out.println(result1);
         String message = "成功";
         String result2 = JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
         Thread.sleep(1000);
     }
-    @Test(testName ="删除",priority = 3)
-    //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void formTest_3() throws IOException, InterruptedException {
-        String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
-        BaseConst_JXZLJ.setToken_zlj_sqr(login);
-        ArrayList list = new ArrayList();
-        list.add(this.ID);
-        JSONArray jsonObject = JSONArray.parseArray(JSON.toJSONString(list));
-        System.out.println(jsonObject);
-        String body = jsonObject.toJSONString();
-        String result = apply.delete(body);
-        String message = "成功";
-        String result1 = JSONObject.parseObject(result).getString("message");
-        Assert.assertEquals(result1,message);
-        Thread.sleep(1000);
-    }
-
-
-
-
-
-
-
-/*    @Test(testName ="登录申请人账号，列表提交时，必填项未填写，提交失败",priority = 10)
-    //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void formTestTest_1() throws IOException, InterruptedException {
-        String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
-        BaseConst_JXZLJ.setToken_zlj_sqr(login);
-        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/addQoApply.json");
-        jsonObject.put("applyName","");
-        String body = jsonObject.toJSONString();
-        String result = apply.addQoApply(body);
-        String message = "接口异常，请联系管理员";
-        String result1 = JSONObject.parseObject(result).getString("message");
-        Assert.assertEquals(result1,message);
-        Thread.sleep(1000);
-    }*/
-
 }

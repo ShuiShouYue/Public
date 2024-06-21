@@ -224,16 +224,7 @@ public class Apply {
         return response;
     }
 
-    /**
-     * 上传
-     */
-    public String upload(String body) throws IOException {
-        Http http = new Http();
-        String token = BaseConst_JXZLJ.getToken_zlj_sqr();
-        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.UPLOAD;
-        String response = http.post(token, url, body);;
-        return response;
-    }
+
 
     /**
      * 下载
@@ -255,4 +246,5 @@ public class Apply {
         String response = http.post(token, url, body);
         return response;
     }
+
 }
