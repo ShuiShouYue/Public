@@ -13,7 +13,7 @@ import org.utils.random.uid.Uid;
 
 import java.io.IOException;
 
-public class ApplyRefuseCancleTest3 {
+public class ApplyRefuseChangeTest2 {
     Apply apply = new Apply();
     Uid uid = new Uid();
     ChangeApply changeApply = new ChangeApply();
@@ -155,18 +155,31 @@ public class ApplyRefuseCancleTest3 {
         String result = apply.audit_sheng(body);
         Thread.sleep(1000);
     }
-    @Test(testName ="登录申请人账号，进行质量官注销操作，提交成功",priority = 10)
-    public void cancelApplyTest() throws IOException, InterruptedException {
+    @Test(testName ="登录申请人账号，进行质量官数据变更操作，且必填项均填写并点击提交，提交成功",priority = 10)
+    public void addQoApplyChangeTest() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
-        String url = BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.CANCELAPPLY;
+        String url = BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_BY_ID_ZLGBG;
         String url1 = url + "?id=" + this.ID;
-        String result = changeApply.cancelApply(url1);
-        String result1 = JSONObject.parseObject(result).getString("message");
-        ID = JSONObject.parseObject(result).getString("data");
+        String result = changeApply.findById_change(url1);
+        JSONObject jsonObject = JSONObject.parseObject(result).getJSONObject("data");
+        name = randomNames.generateChineseName();
+        jsonObject.put("applyName",name);
+        jsonObject.put("archivedId",this.ID);
+        jsonObject.put("id","");
+        jsonObject.put("changeType",1);
+        jsonObject.getJSONArray("declareFiles").getJSONObject(0).put("uid","1718962654067");
+        String body = jsonObject.toJSONString();
+        System.out.println(body);
+        String result1 = changeApply.addQoApply(body);
         String message = "成功";
-        Assert.assertEquals(result1, message);
+        System.out.println(result1);
+        String result2 = JSONObject.parseObject(result1).getString("message");
+        ID = JSONObject.parseObject(result1).getString("data");
+        System.out.println(name);
+        System.out.println(ID);
+        Assert.assertEquals(result2,message);
         Thread.sleep(1000);
     }
     @Test(testName ="登录区/县级市场监管局账号，区/县级审批通过",priority = 11)
@@ -180,32 +193,21 @@ public class ApplyRefuseCancleTest3 {
         String result = changeApply.cancelAudit_xian(body);
         Thread.sleep(1000);
     }
-    @Test(testName ="登录市级市场监管局账号，市级审批通过",priority = 12)
+    @Test(testName ="登录市级市场监管局账号，市级审批不通过",priority = 12)
     //区县审核通过
     public void audit_refuse_shiTest() throws IOException, InterruptedException {
 
         String login = apply.login("Q3YJgDLmc4XCvbGBOBA27Sfm591CPKKd7vg6O20Ab2ZXdExTrEhxOMu4cJ2tcb85RqtPy2B7TqlcEq1muLXzx+Nk1a1vKx8B/v87yunkmNeTi74sVy9ujjJOSHuxm/tCFz1b73QJuKU/w6/ufBdS4v0DHxjRKMPoXBpHmrBkz6k=","cuubBlSXJs0ESHfWaSwdkXMBJZQ72NTWYtYaO692RN/4kNpCBvR5qJjSax5WhL5miVy9soKhVljyXGtMYLvNY/kuS6xlZUBDqWDGNesiYFPnbmD7AtdqeX/jBkj4kl8YZUHPUs1lKRd+rhQbk69VfHk+m59GHx4CD/aHwP3DU3w=");
         BaseConst_JXZLJ.setToken_zlj_shi(login);
-        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/audit_pass.json");
+        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/audit_refuse.json");
         jsonObject.put("id",this.ID);
         jsonObject.put("flowStatus",20);
         String body = jsonObject.toJSONString();
         String result = changeApply.cancelAudit_shi(body);
         Thread.sleep(1000);
     }
-    @Test(testName ="登录省市场监管局账号，省级审批不通过",priority = 13)
-    public void audit_refuse_shengTest() throws IOException, InterruptedException {
-        String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
-        BaseConst_JXZLJ.setToken_zlj_sheng(login);
-        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/audit_refuse.json");
-        jsonObject.put("id",this.ID);
-        jsonObject.put("flowStatus",30);
-        String body = jsonObject.toJSONString();
-        String result = changeApply.cancelAudit_sheng(body);
-        Thread.sleep(1000);
-    }
 
-    @Test(testName ="申请注销操作，省级审批不通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 14)
+    @Test(testName ="申请变更操作，市级审批不通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 13)
     //查询
     public void findByIdTest() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
@@ -216,7 +218,7 @@ public class ApplyRefuseCancleTest3 {
         String result = changeApply.findPageByQuery_xq_sqr(url1);
         System.out.println(result);
         String flowStatusTxt = JSONObject.parseObject(result).getJSONObject("data").getString("flowStatusTxt");
-        String advices = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("flows").getJSONObject(3).getString("advices");
+        String advices = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("flows").getJSONObject(2).getString("advices");
         String message = "已归档";
         String message1 = "不通过";
         Assert.assertEquals(flowStatusTxt, message);
@@ -224,21 +226,4 @@ public class ApplyRefuseCancleTest3 {
         Thread.sleep(1000);
     }
 
-    @Test(testName ="质量官注销，省级审批不通过，登录省级账号，输入姓名，查询用户证书状态，验证证书状态是是\"启用\"",priority = 15)
-    public void findByIdTest_3() throws IOException, InterruptedException {
-        String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
-        BaseConst_JXZLJ.setToken_zlj_sheng(login);
-
-        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/findPageByQuery.json");
-        jsonObject.put("applyName",this.name);
-        jsonObject.put("flowStatus",100);
-        String body = jsonObject.toJSONString();
-
-        String result = changeApply.findPageByQuery_zs(body);
-        System.out.println(result);
-        Integer certStatus = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getInteger("certStatus");
-        Integer message = 1;
-        Assert.assertEquals(certStatus,message);
-        Thread.sleep(1000);
-    }
 }

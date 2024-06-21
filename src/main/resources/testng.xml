@@ -4,8 +4,21 @@
         <classes>
             <!-- 需要运行的测试类 -->
 <!--            <class name="org.zpm.CodingTemplatesTest"/>-->
-           <!-- <class name="org.jxzlj.ApplyTest"/>-->
+           <!-- <class name="org.jxzlj.ApplyTest"/>
             <class name="org.jxzlj.UploadTest"/>
+
+            <class name="org.jxzlj.ApplyPassCancleTest"/>
+            <class name="org.jxzlj.ApplyRefuseCancleTest1"/>
+            <class name="org.jxzlj.ApplyRefuseCancleTest2"/>
+            <class name="org.jxzlj.ApplyRefuseCancleTest3"/>
+            <class name="org.jxzlj.ApplyReturnCancleTest1"/>
+            <class name="org.jxzlj.ApplyReturnCancleTest2"/>
+            <class name="org.jxzlj.ApplyPassChangeTest"/>
+            <class name="org.jxzlj.ApplyReturnChangeTest1"/>
+            <class name="org.jxzlj.ApplyReturnChangeTest2"/>-->
+            <class name="org.jxzlj.ApplyRefuseCancleTest1"/>
+            <class name="org.jxzlj.ApplyRefuseCancleTest2"/>
+            <class name="org.jxzlj.ApplyRefuseCancleTest3"/>
         </classes>
     </test>
     <listeners>

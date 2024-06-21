@@ -213,7 +213,7 @@ public class ApplyRefuseCancleTest2 {
         Thread.sleep(1000);
     }
 
-    @Test(testName ="质量官注销，区/县级审批不通过，登录省级账号，输入姓名，查询用户证书状态，验证证书状态是是\"启用\"",priority = 14)
+    @Test(testName ="质量官注销，市级审批不通过，登录省级账号，输入姓名，查询用户证书状态，验证证书状态是是\"启用\"",priority = 14)
     public void findByIdTest_3() throws IOException, InterruptedException {
         String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
         BaseConst_JXZLJ.setToken_zlj_sheng(login);

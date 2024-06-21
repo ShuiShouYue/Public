@@ -80,7 +80,7 @@ public class ApplyRefuseTest3 {
         Thread.sleep(1000);
     }
 
-    @Test(testName ="查询节点",priority = 10)
+    @Test(testName ="质量官申请，省级审批不通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 10)
     //查询
     public void findByIdTest() throws IOException, InterruptedException {
         String url = BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_BY_ID;

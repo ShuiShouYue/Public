@@ -54,7 +54,7 @@ public class ApplyRefuseTest1 {
 
     }
 
-    @Test(testName ="查询流程节点",priority = 3)
+    @Test(testName ="质量官申请，区/县级审批不通过，登录区/县级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 3)
     //查询
     public void findByIdTest() throws IOException {
         String url = BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.FIND_BY_ID;

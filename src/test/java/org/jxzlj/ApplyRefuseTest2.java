@@ -65,7 +65,7 @@ public class ApplyRefuseTest2 {
         Thread.sleep(1000);
 
     }
-    @Test(testName ="查询节点",priority = 4)
+    @Test(testName ="质量官申请，区/县级审批不通过，登录市级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 4)
     //查询
     public void findByIdTest() throws IOException, InterruptedException {
         String login = apply.login("S1MiSzmkkJpVmZq8bFfkkhHGu+9033afcPzpSC8qyf2VPyF5RDW8FhkkOHBCXn2qoVZBpYhC0krVeLUZMq11wOh6nmTPPnsPVOMz9C1YQeM1IsY27GfN+SJFlmi2ynO5kkKvE09WudCFPgo9EEsvk9Hoz2R+t8DQSIMnn9qxenE=","cna3r0gIN8AaYl6Mp5FRMVotbl0FsxDSpVTjy9SMJGlsxM1J875BWmQwWd7FEoNsyHby1VxqDMg7QkKhb7S87xvGZHMCsV+LP/TARBs4EOVcr38Wn8JSBeQ6r7+B31Z0zfcTFMEH4Jljh7q1pthGPnqDqU5NtSW5EMMBn9JiJYc=");
