@@ -225,5 +225,4 @@ public class ApplyRefuseChangeTest2 {
         Assert.assertEquals(advices, message1);
         Thread.sleep(1000);
     }
-
 }

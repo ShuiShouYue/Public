@@ -4,9 +4,14 @@
         <classes>
             <!-- 需要运行的测试类 -->
 <!--            <class name="org.zpm.CodingTemplatesTest"/>-->
-           <!-- <class name="org.jxzlj.ApplyTest"/>
-            <class name="org.jxzlj.UploadTest"/>
-
+<!--            <class name="org.jxzlj.ApplyTest"/>
+            <class name="org.jxzlj.ApplyRefuseTest1"/>
+            <class name="org.jxzlj.ApplyRefuseTest2"/>
+            <class name="org.jxzlj.ApplyRefuseTest3"/>
+            <class name="org.jxzlj.ApplyRefuseTest4"/>
+            <class name="org.jxzlj.ApplyRefuseTest5"/>
+            <class name="org.jxzlj.ApplyReturnTest1"/>
+            <class name="org.jxzlj.ApplyReturnTest2"/>
             <class name="org.jxzlj.ApplyPassCancleTest"/>
             <class name="org.jxzlj.ApplyRefuseCancleTest1"/>
             <class name="org.jxzlj.ApplyRefuseCancleTest2"/>
@@ -15,14 +20,24 @@
             <class name="org.jxzlj.ApplyReturnCancleTest2"/>
             <class name="org.jxzlj.ApplyPassChangeTest"/>
             <class name="org.jxzlj.ApplyReturnChangeTest1"/>
-            <class name="org.jxzlj.ApplyReturnChangeTest2"/>-->
+            <class name="org.jxzlj.ApplyReturnChangeTest2"/>
             <class name="org.jxzlj.ApplyRefuseCancleTest1"/>
             <class name="org.jxzlj.ApplyRefuseCancleTest2"/>
             <class name="org.jxzlj.ApplyRefuseCancleTest3"/>
+            <class name="org.jxzlj.ApplySpecialTest"/>
+            <class name="org.jxzlj.ApplyRefuseSpecialTest1"/>
+            <class name="org.jxzlj.ApplyRefuseSpecialTest2"/>
+            <class name="org.jxzlj.ApplyRefuseSpecialTest3"/>-->
+            <class name="org.jxzlj.LoginTest"/>
+            <class name="org.jxzlj.PageSizeTest"/>
+            <class name="org.jxzlj.SelectTest"/>
+            <class name="org.jxzlj.FormTest"/>
+            <class name="org.jxzlj.UploadTest"/>
         </classes>
     </test>
     <listeners>
         <!-- 添加ExtentRport监听 -->
-        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+<!--        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>-->
+                <listener class-name="test_report.ExtentTestNGIReportListener"/>
     </listeners>
 </suite>

@@ -44,4 +44,8 @@ public class BasePath_JXZLJ {
 
     //质量官变更详情（data为变更输入）
     public static final String FIND_BY_ID_ZLGBG ="/api/jxqb/qo/archived/findById";
+    //质量官特殊情况上传excel
+    public static final String UPLOAD_SPECIAL ="/api/jxqb/qo/apply/importExcel";
+    //质量官特殊情况上传任命文件
+    public static final String IMPORTRM ="/api/jxqb/qo/apply/importRm";
 }

@@ -179,7 +179,7 @@ public class ApplyReturnCancleTest1 {
         String result = changeApply.cancelAudit_xian(body);
     }
 
-    @Test(testName ="申请注销操作，区/县级审批不通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,区县市场监管局审核退回",priority = 12)
+    @Test(testName ="申请注销操作，区/县级审批退回，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,区县市场监管局审核退回",priority = 12)
     //查询
     public void findByIdTest() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
@@ -195,7 +195,7 @@ public class ApplyReturnCancleTest1 {
         Thread.sleep(1000);
     }
 
-    @Test(testName ="质量官注销，区/县级审批不通过，登录省级账号，输入姓名，查询用户证书状态，验证证书状态是是\"启用\"",priority = 13)
+    @Test(testName ="质量官注销，区/县级审批退回，登录省级账号，输入姓名，查询用户证书状态，验证证书状态是是\"启用\"",priority = 13)
     public void findByIdTest_3() throws IOException, InterruptedException {
         String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
         BaseConst_JXZLJ.setToken_zlj_sheng(login);

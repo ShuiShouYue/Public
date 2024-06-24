@@ -192,7 +192,7 @@ public class ApplyRefuseChangeTest1 {
         String result = changeApply.cancelAudit_xian(body);
     }
 
-    @Test(testName ="申请注销操作，区/县级审批不通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 12)
+    @Test(testName ="申请变更操作，区/县级审批不通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（不通过）",priority = 12)
     //查询
     public void findByIdTest() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=","MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");

@@ -246,5 +246,14 @@ public class Apply {
         String response = http.post(token, url, body);
         return response;
     }
-
+    /**
+     * 质量官特殊情况上传任命文件
+     */
+    public String importRm(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_JXZLJ.getToken_zlj_sheng();
+        String url =  BasePath_JXZLJ.ZLJ_IP + BasePath_JXZLJ.IMPORTRM;
+        String response = http.post(token, url, body);
+        return response;
+    }
 }
