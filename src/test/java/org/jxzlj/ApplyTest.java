@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.base.BaseConst_JXZLJ;
 import org.base.BasePath_JXZLJ;
 import org.service.jxzlj.Apply;
+import org.service.jxzlj.ChangeApply;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
@@ -19,6 +20,7 @@ import java.io.IOException;
 public class ApplyTest {
     Apply apply = new Apply();
     Uid uid = new Uid();
+    ChangeApply changeApply = new ChangeApply();
     RandomNames randomNames = new RandomNames();
     String ID = "";
     String name = "";
@@ -292,7 +294,23 @@ public class ApplyTest {
         Assert.assertEquals(advices,message1);
         Thread.sleep(1000);
     }
+    @Test(testName ="质量官申请全部通过，登录省级账号，输入姓名，查询用户证书状态，验证证书状态是是\"启用\"",priority = 18)
+    public void findByIdTest_7() throws IOException, InterruptedException {
+        String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
+        BaseConst_JXZLJ.setToken_zlj_sheng(login);
 
+        JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/findPageByQuery.json");
+        jsonObject.put("applyName",this.name);
+        jsonObject.put("flowStatus",100);
+        String body = jsonObject.toJSONString();
+
+        String result = changeApply.findPageByQuery_zs(body);
+        System.out.println(result);
+        Integer certStatus = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getInteger("certStatus");
+        Integer message = 1;
+        Assert.assertEquals(certStatus,message);
+        Thread.sleep(1000);
+    }
 
 
 

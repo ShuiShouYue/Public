@@ -12,7 +12,9 @@ import org.utils.random.name.RandomNames;
 import org.utils.random.uid.Uid;
 
 import java.io.IOException;
-
+/**
+ * 变更质量官，区县审核退回流程
+ */
 public class ApplyReturnChangeTest1 {
     Apply apply = new Apply();
     Uid uid = new Uid();

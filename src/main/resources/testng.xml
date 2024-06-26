@@ -4,7 +4,7 @@
         <classes>
             <!-- 需要运行的测试类 -->
 <!--            <class name="org.zpm.CodingTemplatesTest"/>-->
-<!--            <class name="org.jxzlj.ApplyTest"/>
+            <class name="org.jxzlj.ApplyTest"/>
             <class name="org.jxzlj.ApplyRefuseTest1"/>
             <class name="org.jxzlj.ApplyRefuseTest2"/>
             <class name="org.jxzlj.ApplyRefuseTest3"/>
@@ -27,7 +27,7 @@
             <class name="org.jxzlj.ApplySpecialTest"/>
             <class name="org.jxzlj.ApplyRefuseSpecialTest1"/>
             <class name="org.jxzlj.ApplyRefuseSpecialTest2"/>
-            <class name="org.jxzlj.ApplyRefuseSpecialTest3"/>-->
+            <class name="org.jxzlj.ApplyRefuseSpecialTest3"/>
             <class name="org.jxzlj.LoginTest"/>
             <class name="org.jxzlj.PageSizeTest"/>
             <class name="org.jxzlj.SelectTest"/>

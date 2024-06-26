@@ -13,6 +13,9 @@ import org.utils.random.uid.Uid;
 
 import java.io.IOException;
 
+/**
+ * 注销质量官，全部通过流程
+ */
 public class ApplyPassCancleTest {
     Apply apply = new Apply();
     Uid uid = new Uid();
@@ -43,7 +46,7 @@ public class ApplyPassCancleTest {
 
     }
 
-    @Test(testName ="登录区/县级市场监管局账号，区/县级审批通过",priority = 2)
+    @Test(testName ="登录区/县级市场监管局账号，区/县级审批 通过",priority = 2)
     //区县审核通过
     public void audit_pass_xianTest() throws IOException, InterruptedException {
         String login = apply.login("Q3YJgDLmc4XCvbGBOBA27Sfm591CPKKd7vg6O20Ab2ZXdExTrEhxOMu4cJ2tcb85RqtPy2B7TqlcEq1muLXzx+Nk1a1vKx8B/v87yunkmNeTi74sVy9ujjJOSHuxm/tCFz1b73QJuKU/w6/ufBdS4v0DHxjRKMPoXBpHmrBkz6k=","cuubBlSXJs0ESHfWaSwdkXMBJZQ72NTWYtYaO692RN/4kNpCBvR5qJjSax5WhL5miVy9soKhVljyXGtMYLvNY/kuS6xlZUBDqWDGNesiYFPnbmD7AtdqeX/jBkj4kl8YZUHPUs1lKRd+rhQbk69VfHk+m59GHx4CD/aHwP3DU3w=");

@@ -13,7 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * 特殊流程申请质量官，全部审核通过流程
+ */
 public class ApplySpecialTest {
     Apply apply = new Apply();
     String ID = "";

@@ -13,7 +13,9 @@ import org.utils.random.uid.Uid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.IOException;
-
+/**
+ * 变更质量官，全部通过流程
+ */
 public class ApplyPassChangeTest {
     Apply apply = new Apply();
     Uid uid = new Uid();

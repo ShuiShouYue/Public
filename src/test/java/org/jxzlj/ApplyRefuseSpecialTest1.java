@@ -13,7 +13,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * 特殊流程申请质量官，省级初审不通过流程
+ */
 public class ApplyRefuseSpecialTest1 {
     Apply apply = new Apply();
     String ID = "";

@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-
+/**
+ * 页面条数展示校验
+ */
 public class PageSizeTest {
     Apply apply = new Apply();
     @Test(testName ="列表页的每页条数选择10，每页返回10条信息",priority = 1)

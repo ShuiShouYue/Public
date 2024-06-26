@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-
+/**
+ * 登录校验
+ */
 public class LoginTest {
     Apply apply = new Apply();
     String actual = "1";

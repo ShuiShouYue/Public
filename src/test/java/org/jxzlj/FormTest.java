@@ -14,7 +14,9 @@ import org.utils.random.uid.Uid;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+/**
+ * 表格校验
+ */
 public class FormTest {
     Apply apply = new Apply();
     Uid uid = new Uid();
