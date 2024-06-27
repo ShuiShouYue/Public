@@ -1,6 +1,8 @@
 package org.jxzlj;
 
 import cn.hutool.http.HttpRequest;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.base.BaseConst_JXZLJ;
 import org.base.BasePath_JXZLJ;
@@ -11,6 +13,7 @@ import org.utils.JsonFileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /**
@@ -117,6 +120,22 @@ public class ApplyRefuseSpecialTest2 {
         jsonObject.put("flowStatus",40);
         String body = jsonObject.toJSONString();
         String result = apply.audit_sheng(body);
+        Thread.sleep(1000);
+    }
+    @Test(testName ="登录省市场监管局账号，对其数据进行删除操作，点击删除，删除成功",priority = 7)
+    public void formTest_3() throws IOException, InterruptedException {
+        String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
+        BaseConst_JXZLJ.setToken_zlj_sheng(login);
+
+        ArrayList list = new ArrayList();
+        list.add(this.ID);
+        JSONArray jsonObject = JSONArray.parseArray(JSON.toJSONString(list));
+        System.out.println(jsonObject);
+        String body = jsonObject.toJSONString();
+        String result = apply.delete_sheng(body);
+        String message = "成功";
+        String result1 = JSONObject.parseObject(result).getString("message");
+        Assert.assertEquals(result1,message);
         Thread.sleep(1000);
     }
 }

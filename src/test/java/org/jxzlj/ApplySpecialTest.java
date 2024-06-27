@@ -1,6 +1,8 @@
 package org.jxzlj;
 
 import cn.hutool.http.HttpRequest;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.base.BaseConst_JXZLJ;
 import org.base.BasePath_JXZLJ;
@@ -11,6 +13,7 @@ import org.utils.JsonFileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /**
@@ -137,8 +140,6 @@ public class ApplySpecialTest {
                 .execute()
                 .body();
         System.out.println(DATA);
-        ID = JSONObject.parseObject(DATA).getString("id");
-        System.out.println(ID);
         Thread.sleep(1000);
     }
     @Test(testName ="上传任命文件",priority = 8)
@@ -154,6 +155,7 @@ public class ApplySpecialTest {
     }
     @Test(testName ="登录省市场监管局账号，备案审核通过",priority = 9)
     public void audit_pass__baTest() throws IOException, InterruptedException {
+
         String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
         BaseConst_JXZLJ.setToken_zlj_sheng(login);
         JSONObject jsonObject = JsonFileUtils.readJson("/json/jxzlj/request/audit_pass.json");
@@ -161,6 +163,8 @@ public class ApplySpecialTest {
         jsonObject.put("flowStatus",60);
         String body = jsonObject.toJSONString();
         String result = apply.audit_sheng(body);
+        System.out.println(result);
         Thread.sleep(1000);
     }
+
 }

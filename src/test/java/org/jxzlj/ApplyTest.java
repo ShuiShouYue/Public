@@ -278,7 +278,6 @@ public class ApplyTest {
     @Test(testName ="省局备案通过，登录省级账号，输入姓名，查询用户流转节点，验证流转节点是,已归档（通过）",priority = 17)
     //查询
     public void findByIdTest() throws IOException, InterruptedException {
-            ID = "4776246ba796415c9f84ebf58e5a010b";
         String login = apply.login("QgXn16zeXzqfb5tOndCQ/Sufh40KqH5FGb5NTeV6oLZT5kwcS5VyfARHKYJLkbEzR2S5y5D2Kn5vaS1zNjErBCtINihQlcC5MaK9YJ7a5nByexIVT0YJEeGKnASy6SNMzI9OotWspApIwvqYA9zjZhvo+7fmHKor/EcOV4GSXqY=","jwUZegEYaAfwACOQNkXaNpMUWqJCWfTdMZ08ULTa7YFyUn9c/ENSXWGZCYBxmfLkHmOJS5XmmikFAtfKFRE1zFOib5njVUIrqdc+ACouuJnV+ykPwWWEwn2pj2Dc6nRSISJ0nZRm+dmIz08O8U2mtwSSOL/rT2hGa/k1k64HaJ0=");
         BaseConst_JXZLJ.setToken_zlj_sheng(login);
 
@@ -311,9 +310,6 @@ public class ApplyTest {
         Assert.assertEquals(certStatus,message);
         Thread.sleep(1000);
     }
-
-
-
 
 
 }
