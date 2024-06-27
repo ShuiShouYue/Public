@@ -21,7 +21,7 @@ public class UploadTest {
     Apply apply = new Apply();
     @Test(testName ="导入zip类型的文件，导入成功",priority = 1)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest() throws IOException {
+    public void UploadTest() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -42,7 +42,7 @@ public class UploadTest {
     }
     @Test(testName ="导入doc类型的文件，导入成功",priority = 2)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_1() throws IOException {
+    public void UploadTest_1() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -63,7 +63,7 @@ public class UploadTest {
     }
     @Test(testName ="导入docx类型的文件，导入成功",priority = 3)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_2() throws IOException {
+    public void UploadTest_2() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -85,7 +85,7 @@ public class UploadTest {
 
     @Test(testName ="导入pdf类型的文件，导入成功",priority = 4)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_3() throws IOException {
+    public void UploadTest_3() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -106,7 +106,7 @@ public class UploadTest {
     }
     @Test(testName ="导入rar类型的文件，导入成功",priority = 5)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_4() throws IOException {
+    public void UploadTest_4() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -127,7 +127,7 @@ public class UploadTest {
     }
     @Test(testName ="导入xlsx类型的文件，导入成功",priority = 6)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_5() throws IOException {
+    public void UploadTest_5() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -149,7 +149,7 @@ public class UploadTest {
     @Test(testName ="导入不符合规范类型的数据，导入失败，并提示‘文件格式不正确, 请上传doc/docx/pdf/zip/rar/xlsx格式文件!’",priority = 7)
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
 
-    public void addQoApplyTest_6() throws IOException, InterruptedException {
+    public void UploadTest_6() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -173,7 +173,7 @@ public class UploadTest {
     @Test(testName ="导入内存占用超过200M数据导入失败，并提示",priority = 8)
 
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_7() throws IOException {
+    public void UploadTest_7() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -196,7 +196,7 @@ public class UploadTest {
     @Test(testName ="导出当页全部数据，能够导出对应的数据，且数据正确",priority = 9)
 
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_8() throws IOException {
+    public void UploadTest_8() throws IOException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
@@ -206,7 +206,7 @@ public class UploadTest {
     @Test(testName ="导出一条数据，能够导出对应的数据，且数据正确",priority = 10)
 
     //质量官申请并提交校验(需要每次手动更新ID和applyName的值)
-    public void addQoApplyTest_9() throws IOException, InterruptedException {
+    public void UploadTest_9() throws IOException, InterruptedException {
         String login = apply.login("GPKLmKwDgzI3FVw1bHJAR+agzNuAJqk7sLKxAIVmSbckM03WToHQ7HOtZgEW9Wianj1r0uX0WL4HaNKY+zGPfwi70iaJ+mNIlBmsW0XPRn3klpUlu58bWQGz1QvzSYY/ftxJ7cG+FenpvL6d2HOZbWhriYhq56xJGSPDnwbaNOo=", "MPkdSXLXLpJKqY27Zdp3DjB3OUnohwBEVr9lvVNlv+B3JQ3+vxGcoEqcZ+4xn1L89vxZ/Zml6z0q8x1HpHgIf1lAB0Vpja2riGtwIhm3M/TxKcApv2h+n1djm2zosU1RGR5LFVOYesre/hgITA9YnbTWSmOaZx1b22hZftm4tg==");
         BaseConst_JXZLJ.setToken_zlj_sqr(login);
 
