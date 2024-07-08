@@ -60,7 +60,4 @@ public class CodingTemplates {
         return response;
     }
 
-
-
-
 }

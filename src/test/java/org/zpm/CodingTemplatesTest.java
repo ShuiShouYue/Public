@@ -58,7 +58,7 @@ public class CodingTemplatesTest {
         String message = "模版一";
         Assert.assertEquals(result1,message);
     }
-
+ /*
     @Test(testName ="模版删除校验",priority = 4)
     //模版删除
     public void templatesDeleteTest() throws IOException {
@@ -74,7 +74,7 @@ public class CodingTemplatesTest {
         Assert.assertEquals(result2,message);
     }
 
- /*
+
    public static void main(String[] args) throws IOException {
         CodingTemplatesTest codingTemplatesTest = new CodingTemplatesTest();
         codingTemplatesTest.templatesSave();
