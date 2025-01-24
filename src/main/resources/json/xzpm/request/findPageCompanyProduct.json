@@ -1,18 +1,14 @@
 {
   "pageNum": 1,
   "pageSize": 10,
-  "searchTime": [
-    "2024-05-01T00:00:00",
-    "2025-06-04T23:00:00"
-  ],
-  "CreditCode": "9133000014291836XX",
-  "ProductName": "杭州丝绸",
-  "BatchNo": null,
-  "Category": "3",
-  "CompanyName": null,
-  "AreaCode": null,
-  "Specifications": "88cm*88cm",
-  "CodeType": null,
-  "GPCKindCode": "10001699",
-  "GPCKindName": "刺绣织物/纺织品"
+  "searchTime": null,
+  "creditCode": "77d05bdbc0084328845bcaba632d0be1",
+  "productName": null,
+  "batchNo": null,
+  "sPCategory": null,
+  "companyName": null,
+  "areaCode": null,
+  "specifications": "规格型号11",
+  "codeType": null,
+  "distributorType": null
 }

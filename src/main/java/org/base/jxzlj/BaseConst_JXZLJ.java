@@ -1,4 +1,4 @@
-package org.base;
+package org.base.jxzlj;
 
 public class BaseConst_JXZLJ {
 

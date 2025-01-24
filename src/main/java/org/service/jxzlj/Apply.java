@@ -2,8 +2,8 @@ package org.service.jxzlj;
 
 import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSONObject;
-import org.base.BaseConst_JXZLJ;
-import org.base.BasePath_JXZLJ;
+import org.base.jxzlj.BaseConst_JXZLJ;
+import org.base.jxzlj.BasePath_JXZLJ;
 import org.springframework.stereotype.Service;
 import org.utils.http.Http;
 

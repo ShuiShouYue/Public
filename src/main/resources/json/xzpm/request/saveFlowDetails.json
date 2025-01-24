@@ -1,0 +1,15 @@
+{
+  "buyerCreditCode": "91330109589891087U",
+  "customersId": "dc2cc70450a34922951ebdd78bfd7642",
+  "saleDate": "2025-01-01 00:00:00",
+  "buyerName": "经销商家",
+  "buyerAddress": "萧山区新塘街道朱家坛村",
+  "buyerMobile": "13565656565",
+  "productFlowRegion": "110000,220200,330000,330100",
+  "unifiedCode": "20MA2J2JNK999",
+  "batchCode": "444",
+  "serialCode": "2e25f4f4ebb5472a8f7bf951e14d5be6",
+  "serialCodeType": "00000001",
+  "codeType": "serialCode",
+  "isOpen": "{\"saleDateIsOpen\":1,\"buyerNameIsOpen\":1,\"buyerAddressIsOpen\":1,\"buyerMobileIsOpen\":1,\"productFlowRegionIsOpen\":1,\"unifiedCodeIsOpen\":1,\"batchCodeIsOpen\":1,\"serialCodeTypeIsOpen\":1}"
+}

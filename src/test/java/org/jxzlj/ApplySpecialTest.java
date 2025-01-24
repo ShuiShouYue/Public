@@ -1,11 +1,9 @@
 package org.jxzlj;
 
 import cn.hutool.http.HttpRequest;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import org.base.BaseConst_JXZLJ;
-import org.base.BasePath_JXZLJ;
+import org.base.jxzlj.BaseConst_JXZLJ;
+import org.base.jxzlj.BasePath_JXZLJ;
 import org.service.jxzlj.Apply;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,7 +11,6 @@ import org.utils.JsonFileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 /**

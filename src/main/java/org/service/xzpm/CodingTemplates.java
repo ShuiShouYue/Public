@@ -1,7 +1,7 @@
 package org.service.xzpm;
 
-import org.base.BaseConst;
-import org.base.BasePath;
+import org.base.new_zpm.BaseConst_New_ZPM;
+import org.base.new_zpm.BasePath_New_ZPM;
 import org.springframework.stereotype.Service;
 import org.utils.http.Http;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class CodingTemplates {
      */
     public String findByUscc(String url) throws IOException{
         Http http = new Http();
-        String token = BaseConst.Token_xzpm;
+        String token = BaseConst_New_ZPM.Token_xzpm;
         String response = http.get(token,url);
         return response;
     }
@@ -23,8 +23,8 @@ public class CodingTemplates {
      */
     public String findPageByQuery(String body) throws IOException {
         Http http = new Http();
-        String url = BasePath.ZPM_IP + BasePath.TEMPLATES_FIND;
-        String token = BaseConst.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.TEMPLATES_FIND;
+        String token = BaseConst_New_ZPM.Token_xzpm;
         String response = http.post(token,url,body);
         return response;
 
@@ -35,8 +35,8 @@ public class CodingTemplates {
      */
     public String templatesSave(String body) throws IOException{
         Http http = new Http();
-        String url = BasePath.ZPM_IP + BasePath.TEMPLATES_SAVE;
-        String token = BaseConst.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.TEMPLATES_SAVE;
+        String token = BaseConst_New_ZPM.Token_xzpm;
         String response = http.post(token,url,body);
         return response;
     }
@@ -45,8 +45,8 @@ public class CodingTemplates {
      */
     public String templatesDelete(String body) throws IOException{
         Http http = new Http();
-        String token = BaseConst.Token_xzpm;
-        String url = BasePath.ZPM_IP + BasePath.TEMPLATES_DELETE;
+        String token = BaseConst_New_ZPM.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.TEMPLATES_DELETE;
         String response = http.post(token,url,body);
         return response;
     }
@@ -55,7 +55,7 @@ public class CodingTemplates {
      */
     public String findById(String url) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token_xzpm;
+        String token = BaseConst_New_ZPM.Token_xzpm;
         String response = http.get(token,url);
         return response;
     }

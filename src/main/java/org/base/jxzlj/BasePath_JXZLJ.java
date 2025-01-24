@@ -1,4 +1,4 @@
-package org.base;
+package org.base.jxzlj;
 
 //-------------------------------山西质量奖质量官-------------------------------------
 public class BasePath_JXZLJ {

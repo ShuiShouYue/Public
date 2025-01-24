@@ -1,8 +1,7 @@
 package org.service.xzpm;
 
-import org.apache.tomcat.jni.Thread;
-import org.base.BaseConst;
-import org.base.BasePath;
+import org.base.new_zpm.BaseConst_New_ZPM;
+import org.base.new_zpm.BasePath_New_ZPM;
 import org.utils.http.Http;
 
 import java.io.IOException;
@@ -13,8 +12,8 @@ public class SamplingProduct {
      */
     public String plmSave(String body) throws IOException {
         Http http = new Http();
-        String token = BaseConst.Token_xzpm;
-        String url = BasePath.ZPM_IP + BasePath.SAMPLING_PRODUCT_SAVE;
+        String token = BaseConst_New_ZPM.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.SAMPLING_PRODUCT_SAVE;
         String response = http.post(token,url,body);
         return response;
     }
@@ -24,8 +23,8 @@ public class SamplingProduct {
      */
     public String findPageCompanyProduct(String body) throws IOException{
         Http http = new Http();
-        String token = BaseConst.Token_xzpm;
-        String url = BasePath.ZPM_IP + BasePath.SAMPLING_PRODUCT_FIND;
+        String token = BaseConst_New_ZPM.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.SAMPLING_PRODUCT_FIND;
         String response = http.post(token,url,body);
         return response;
     }
@@ -36,7 +35,7 @@ public class SamplingProduct {
      */
     public String findById(String url) throws IOException{
         Http http = new Http();
-        String token = BaseConst.Token_xzpm;
+        String token = BaseConst_New_ZPM.Token_xzpm;
         String response = http.get(token,url);
         return response;
     }
@@ -46,8 +45,8 @@ public class SamplingProduct {
      */
     public String setProductQRCodeInvalid(String body) throws IOException{
         Http http = new Http();
-        String url = BasePath.ZPM_IP + BasePath.SAMPLING_PRODUCT_DELETE;
-        String token = BaseConst.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.SAMPLING_PRODUCT_DELETE;
+        String token = BaseConst_New_ZPM.Token_xzpm;
         String response = http.post(token,url,body);
         return response;
     }

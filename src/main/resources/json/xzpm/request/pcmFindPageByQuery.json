@@ -1,8 +1,10 @@
 {
   "pageNum": 1,
   "pageSize": 10,
-  "unifiedCode": "",
-  "productName": "杭州丝绸",
+  "productName": "工业",
   "specifications": "",
-  "batchNo": ""
+  "batchNo": "",
+  "DistributorType": null,
+  "searchTime": null,
+  "batchCode": "444"
 }

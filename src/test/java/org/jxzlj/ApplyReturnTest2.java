@@ -1,7 +1,7 @@
 package org.jxzlj;
 
 import com.alibaba.fastjson.JSONObject;
-import org.base.BaseConst_JXZLJ;
+import org.base.jxzlj.BaseConst_JXZLJ;
 import org.service.jxzlj.Apply;
 import org.testng.Assert;
 import org.testng.annotations.Test;

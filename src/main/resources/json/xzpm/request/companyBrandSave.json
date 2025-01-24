@@ -1,0 +1,41 @@
+{
+  "brandName": "品牌名称",
+  "brandNameEn": "Brand Name",
+  "brandContent": "品牌介绍",
+  "undefined": "升级后不会删除.mp4",
+  "basicCompanyFileList": [
+    {
+      "name": "杭州超尔切削工具有限公司logo.jpg",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
+      "fileName": "杭州超尔切削工具有限公司logo.jpg",
+      "filePath": "elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
+      "fileTypeCode": "BRAND_LOGO",
+      "fileTypeName": "品牌logo",
+      "uid": 1737621123907,
+      "status": "success"
+    },
+    {
+      "name": "导入excel报错后并下载 - Jun 5, 2024.mp4",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/f8ef4059f13a11f96c872a72120fd155.mp4",
+      "fileName": "导入excel报错后并下载 - Jun 5, 2024.mp4",
+      "filePath": "elint/f8ef4059f13a11f96c872a72120fd155.mp4",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/f8ef4059f13a11f96c872a72120fd155.mp4",
+      "fileTypeCode": "BRAND_CORPORATE_PUBLICIZE_VIDEO",
+      "fileTypeName": "企业宣传视频",
+      "uid": 1737621164341,
+      "status": "success"
+    },
+    {
+      "name": "升级后不会删除.mp4",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/c4534495ac5865d4650a43b0bbb56e66.mp4",
+      "fileName": "升级后不会删除.mp4",
+      "filePath": "elint/c4534495ac5865d4650a43b0bbb56e66.mp4",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/c4534495ac5865d4650a43b0bbb56e66.mp4",
+      "fileTypeCode": "BRAND_CORPORATE_PUBLICIZE_VIDEO",
+      "fileTypeName": "企业宣传视频",
+      "uid": 1737621218867,
+      "status": "success"
+    }
+  ]
+}

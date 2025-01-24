@@ -1,8 +1,7 @@
-package org.zpm;
-import com.alibaba.fastjson.JSONArray;
+package org.xzpm;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
-import org.base.BasePath;
+import org.base.new_zpm.BasePath_New_ZPM;
 import org.service.xzpm.CodingTemplates;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,7 +19,7 @@ public class CodingTemplatesTest {
 //验证首页数据
     @Test(testName ="首页数据校验",priority = 1)
     public void findByUsccTest() throws IOException {
-        String url = BasePath.ZPM_IP + BasePath.GET_COMPANY_INFO;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.GET_COMPANY_INFO;
         String result = codingTemplates.findByUscc(url);
         JSONObject data = JSONObject.parseObject(result).getJSONObject("data");
         System.out.println(data);

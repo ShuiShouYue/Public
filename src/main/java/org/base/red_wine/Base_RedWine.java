@@ -1,9 +1,9 @@
-package org.base;
+package org.base.red_wine;
 
-public class BaseConst {
+public class Base_RedWine {
     public static  String Token_xzpm = "Bearer 1176aa08-2c7e-4e0b-bb55-f90a2c041661";
 
-    public BaseConst() {
+    public Base_RedWine() {
     }
 
     public static String getToken_xzpm() {

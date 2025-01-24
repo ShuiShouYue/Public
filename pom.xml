@@ -137,6 +137,11 @@
       <version>4.10.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.3</version>
+    </dependency>
 
 
 
@@ -155,7 +160,18 @@
       <version>2.3.8</version>
     </dependency>
 
+    <!--SM4Utils相关配置 SM4 加密算法 -->
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+      <version>1.69</version>
+    </dependency>
 
+    <!-- 配置gson-string与map格式互转 -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+    </dependency>
 
 
   </dependencies>

@@ -1,7 +1,7 @@
 package org.service.jxzlj;
 
-import org.base.BaseConst_JXZLJ;
-import org.base.BasePath_JXZLJ;
+import org.base.jxzlj.BaseConst_JXZLJ;
+import org.base.jxzlj.BasePath_JXZLJ;
 import org.utils.http.Http;
 
 import java.io.IOException;
