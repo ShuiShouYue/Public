@@ -4,11 +4,25 @@
   "address": null,
   "contactName": null,
   "contactPhone": null,
+  "classifyType": "原材料分类",
+  "barCode": "1231",
   "supplierId": "543d92e25d11438ba6f58cddc22f9bee",
   "supplierName": "厦门红酒酒进出口有限公司",
+  "purchaseTime": "2025-01-01 00:00:00",
   "materialName": "瓶塞",
   "specification": "3A",
   "purchaseBatchNo": "333",
   "purchaseTotal": "33",
-  "unitType": "个"
+  "unitType": "个",
+  "materialFileList": [{
+    "name": "杭州超尔切削工具有限公司logo.jpg",
+    "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
+    "fileName": "杭州超尔切削工具有限公司logo.jpg",
+    "filePath": "elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
+    "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
+    "fileTypeCode": "MATERIALS_LOGO",
+    "fileTypeName": "商标",
+    "uid": 1737703414139,
+    "status": "success"
+  }]
 }

@@ -1,15 +1,15 @@
 {
   "buyerCreditCode": "91330109589891087U",
-  "customersId": "dc2cc70450a34922951ebdd78bfd7642",
+  "customersId": "90f49d947ccf44cabd686cffc68e00d9",
   "saleDate": "2025-01-01 00:00:00",
   "buyerName": "经销商家",
   "buyerAddress": "萧山区新塘街道朱家坛村",
   "buyerMobile": "13565656565",
-  "productFlowRegion": "110000,220200,330000,330100",
-  "unifiedCode": "20MA2J2JNK999",
-  "batchCode": "444",
-  "serialCode": "2e25f4f4ebb5472a8f7bf951e14d5be6",
-  "serialCodeType": "00000001",
-  "codeType": "serialCode",
+  "productFlowRegion": "000000,110000,120000,130000,140000,140100,140200,140300,140400,140500,140600,140700,140800,140900,141000,141100,150000",
+  "unifiedCode": "2058989108994",
+  "batchCode": null,
+  "serialCode": null,
+  "serialCodeType": null,
+  "codeType": "unifiedCode",
   "isOpen": "{\"saleDateIsOpen\":1,\"buyerNameIsOpen\":1,\"buyerAddressIsOpen\":1,\"buyerMobileIsOpen\":1,\"productFlowRegionIsOpen\":1,\"unifiedCodeIsOpen\":1,\"batchCodeIsOpen\":1,\"serialCodeTypeIsOpen\":1}"
 }

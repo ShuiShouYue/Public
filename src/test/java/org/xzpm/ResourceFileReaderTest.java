@@ -41,7 +41,7 @@ public class ResourceFileReaderTest{
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageCompanyProduct.json").toJSONString();
         String result = samplingProduct.findPageCompanyProduct(body);
         System.out.println(result);
-        String message = "规格型号11";
+        String message = "森森";
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("specifications");
         Assert.assertEquals(result1,message);
         String CodeID = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("CodeID");

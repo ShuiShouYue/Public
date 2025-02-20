@@ -14,13 +14,13 @@ public class BasePath_New_ZPM {
     //获取首页信息
     public static final String GET_COMPANY_INFO="/zpmapi/gm2d/company/findByUscc";
     //创建模板
-    public static final String TEMPLATES_SAVE="/zpmapi/zpm/codingtemplates/save";
+    public static final String TEMPLATES_SAVE ="/api/zpm/zpm/codingtemplates/save";
     //模版列表页查询
-    public static final String TEMPLATES_FIND ="/zpmapi/zpm/codingtemplates/findPageByQuery";
+    public static final String TEMPLATES_FIND ="/api/zpm/zpm/codingtemplates/findPageByQuery";
     //模板详情页查询
     public static final String TEMPLATES_DETAILS_FIND ="/zpmapi/zpm/codingtemplates/findById";
     //模板删除
-    public static final String TEMPLATES_DELETE = "/zpmapi/zpm/codingtemplates/delete";
+    public static final String TEMPLATES_DELETE = "/api/zpm/zpm/codingtemplates/delete";
 
 
 
@@ -102,6 +102,25 @@ public class BasePath_New_ZPM {
     public static final String COMPANY_CREDENTIAL_FIND ="/api/zpm/companyCredential/findPageByQuery";
     //资质删除
     public static final String COMPANY_CREDENTIAL_DELETE ="/api/zpm/companyCredential/delete";
+
+    //进货信息新增
+    public static final String MATERIAL_PURCHASE_SAVE ="/api/zpm/material/materialPurchase/save";
+    //进货信息查询
+    public static final String MATERIAL_PURCHASE_FIND ="/api/zpm/material/materialPurchase/findPageByQuery";
+    //进货信息删除
+    public static final String MATERIAL_PURCHASE_DELETE ="/api/zpm/material/materialPurchase/delete";
+
+
+    //变更批次
+    public static final String CHANGE_BATCH ="/api/zpm/zpm/zpmCode/associatedWithBatchAndBarSingle";
+    //批量变更批次
+    public static final String CHANGE_BATCH_MORE ="/api/zpm/zpm/zpmCode/associatedWithBatchAndBarBatch";
+
+
+    //修改密码
+    public static final String UPDATEPWD ="/api/zpm/sys/sysUser/updatePwd";
+
+
     //-------------------------------接口路径-------------------------------------
 
 }

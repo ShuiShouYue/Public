@@ -18,6 +18,7 @@ public class ProcessDelete {
     SamplingProduct samplingProduct = new SamplingProduct();
     static ZpmCode zpmCode = new ZpmCode();
     MaterialCustomers materialCustomers= new MaterialCustomers();
+    MaterialPurchase materialPurchase= new MaterialPurchase();
     @Test(testName ="流向信息删除校验",priority = 1)
     public void deleteFlowDetailsTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/flowDetailsfindPageDpm.json").toJSONString();
@@ -93,7 +94,7 @@ public class ProcessDelete {
         Assert.assertEquals(result2,message2);
     }
 
-    @Test(testName ="原辅料删除校验",priority = 6)
+    @Test(testName ="原材料删除校验",priority = 6)
     public void MaterialsDeleteTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageByQuery.json").toJSONString();
         String result = materialMaterials.findPageByQuery(body);
@@ -115,6 +116,19 @@ public class ProcessDelete {
         String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.SUPPLIERS_DELETE+ "?id="+id;
         System.out.println(url);
         String result1 = materialSuppliers.delete(url);
+        String result2 =JSONObject.parseObject(result1).getString("message");
+        Assert.assertEquals(result2,message);
+    }
+
+    @Test(testName ="进货信息删除校验",priority = 8)
+    public void PurchaseDeleteTest() throws  IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/materialPurchaseFind.json").toJSONString();
+        String result = materialPurchase.findPageByQuery(body);
+        String message = "成功";
+        String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.MATERIAL_PURCHASE_DELETE+ "?id="+id;
+        System.out.println(url);
+        String result1 = materialPurchase.delete(url);
         String result2 =JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
     }

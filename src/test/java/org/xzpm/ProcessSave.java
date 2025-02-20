@@ -16,7 +16,21 @@ public class ProcessSave {
     SamplingProduct samplingProduct = new SamplingProduct();
     static ZpmCode zpmCode = new ZpmCode();
     MaterialCustomers materialCustomers= new MaterialCustomers();
-    @Test(testName ="原辅料创建校验",priority = 1)
+    MaterialPurchase materialPurchase= new MaterialPurchase();
+
+    @Test(testName ="供应商创建校验",priority = 1)
+    public void SuppliersSaveTest() throws IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/materialSuppliers.json").toJSONString();
+        String result = materialSuppliers.save(body);
+        String message = "成功";
+        String message1 = "模板名称重复,换一个试试!";
+        String result1 =JSONObject.parseObject(result).getString("message");
+        Assert.assertEquals(result1,message);
+/*        String result2 = materialSuppliers.save(body);
+        String result3 =JSONObject.parseObject(result2).getString("message");
+        Assert.assertEquals(result3,message1);*/
+    }
+    @Test(testName ="原辅料创建校验",priority = 2)
     public void MaterialsSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialMaterials.json").toJSONString();
         String result = materialMaterials.save(body);
@@ -30,21 +44,21 @@ public class ProcessSave {
     }
 
 
-    @Test(testName ="供应商创建校验",priority = 2)
-    public void SuppliersSaveTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/xzpm/request/materialSuppliers.json").toJSONString();
-        String result = materialSuppliers.save(body);
+
+    @Test(testName ="进货信息创建校验",priority = 3)
+    public void PurchaseSaveTest() throws IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/materialPurchaseSave.json").toJSONString();
+        String result = materialPurchase.save(body);
         String message = "成功";
         String message1 = "模板名称重复,换一个试试!";
-        String result1 =JSONObject.parseObject(result).getString("message");
+        String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
 /*        String result2 = materialSuppliers.save(body);
         String result3 =JSONObject.parseObject(result2).getString("message");
         Assert.assertEquals(result3,message1);*/
     }
 
-
-    @Test(testName ="品类码创建校验",priority = 3)
+    @Test(testName ="品类码创建校验",priority = 4)
     //品类码创建校验(json文件的LatsCode每次需要更新)
     public void samplingProductSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json").toJSONString();
@@ -59,7 +73,7 @@ public class ProcessSave {
         Assert.assertEquals(result3,message1);
     }
 
-    @Test(testName ="批次码创建校验",priority = 4)
+    @Test(testName ="批次码创建校验",priority = 5)
     //批次码创建校验(JSON文件每次需要变更批次码CODE（batchCode）的数据，因为批次码是软删除)
     public void saveBatchTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/saveBatch.json").toJSONString();
@@ -69,33 +83,25 @@ public class ProcessSave {
         Assert.assertEquals(message,result1);
     }
 
-    @Test(testName ="单品码创建校验",priority = 5)
-    //单品码创建校验（JSON文件每次需要变更单品码CODE（serialCode）的数据，因为单品码是软删除）
+    @Test(testName ="单品码创建校验",priority = 6)
     public void saveDpmTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
-        String result0 = zpmCode.findPageByQuery(body);
-        String batchCode = JSONObject.parseObject(result0).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("batchCode");
-        JSONObject body1 = JsonFileUtils.readJson("/json/xzpm/request/saveDpm.json");
-        body1.put("batchCode",batchCode);
-        String result = zpmCode.saveDpm(body1.toJSONString());
+        String body = JsonFileUtils.readJson("/json/xzpm/request/saveDpm.json").toJSONString();
+        String result = zpmCode.saveDpm(body);
         String message = "成功";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
     }
 
-    @Test(testName ="经销商创建校验",priority = 6)
+    @Test(testName ="经销商创建校验",priority = 7)
     public void customersSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialCustomersSave.json").toJSONString();
         String result = materialCustomers.save(body);
         String message = "成功";
-        String message1 = "模板名称重复,换一个试试!";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-/*        String result2 = materialSuppliers.save(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);*/
+
     }
-    @Test(testName ="流向信息创建校验",priority = 7)
+    @Test(testName ="流向信息创建校验",priority = 8)
     public void saveFlowDetailsTest() throws IOException {
         JSONObject body1 = JsonFileUtils.readJson("/json/xzpm/request/saveFlowDetails.json");
         String result = zpmCode.saveFlowDetails(body1.toJSONString());

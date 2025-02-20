@@ -8,23 +8,26 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-
+/**
+ * 销售单位信息
+ */
 public class MaterialCustomersTest {
     MaterialCustomers materialCustomers= new MaterialCustomers();
-    @Test(testName ="经销商创建校验",priority = 1)
+    @Test(testName ="销售单位创建校验",priority = 1)
     public void customersSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialCustomersSave.json").toJSONString();
         String result = materialCustomers.save(body);
         String message = "成功";
-        String message1 = "模板名称重复,换一个试试!";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-/*        String result2 = materialSuppliers.save(body);
+/*
+        String message1 = "模板名称重复,换一个试试!";
+        String result2 = materialSuppliers.save(body);
         String result3 =JSONObject.parseObject(result2).getString("message");
         Assert.assertEquals(result3,message1);*/
     }
 
-    @Test(testName ="经销商查询校验",priority = 2)
+    @Test(testName ="销售单位查询校验",priority = 2)
     public void customersFindPageByQueryTest() throws IOException {
         JSONObject jsonObject= JsonFileUtils.readJson("/json/xzpm/request/customersFindPageByQuery.json");
         String body = jsonObject.toString();
@@ -34,7 +37,7 @@ public class MaterialCustomersTest {
         Assert.assertEquals(result1,message);
     }
 
-    @Test(testName ="经销商删除校验",priority = 3)
+    @Test(testName ="销售单位删除校验",priority = 3)
     public void customersDeleteTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/customersFindPageByQuery.json").toJSONString();
         String result = materialCustomers.findPageByQuery(body);

@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-//品牌信息
+/**
+ * 品牌信息
+ */
 public class CompanyBrandTest {
     static CompanyBrand companyBrand = new CompanyBrand();
     @Test(testName ="品牌新增",priority = 1)

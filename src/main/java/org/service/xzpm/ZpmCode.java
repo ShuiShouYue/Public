@@ -124,4 +124,26 @@ public class ZpmCode {
         String response = http.get(token,url);
         return response;
     }
+
+    /**
+     * 变更批次
+     */
+    public String  associatedWithBatchAndBarSingle(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_New_ZPM.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.CHANGE_BATCH;
+        String response = http.post(token,url,body);
+        return response;
+    }
+
+    /**
+     * 批量变更批次
+     */
+    public String  associatedWithBatchAndBarBatch(String body) throws IOException {
+        Http http = new Http();
+        String token = BaseConst_New_ZPM.Token_xzpm;
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.CHANGE_BATCH_MORE;
+        String response = http.post(token,url,body);
+        return response;
+    }
 }

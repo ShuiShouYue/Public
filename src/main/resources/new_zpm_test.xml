@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="测试套件">
+    <test name="测试模块">
+        <classes>
+            <!-- 需要运行的测试类 -->
+           <class name="org.xzpm.CompanyBrandTest"/>
+            <!--            <class name="org.xzpm.ProcessDelete"/>-->
+            <!-- 普通工业商品流程测试类 -->
+<!--            <class name="org.xzpm.Process"/>
+            &lt;!&ndash; 模版测试类 &ndash;&gt;
+            <class name="org.xzpm.CodingTemplatesTest"/>
+            &lt;!&ndash; 品牌测试类 &ndash;&gt;
+            <class name="org.xzpm.CompanyBrandTest"/>
+            &lt;!&ndash; 资质测试类 &ndash;&gt;
+            <class name="org.xzpm.CompanyCredentialTest"/>
+            &lt;!&ndash; 企业基础信息测试类 &ndash;&gt;
+            <class name="org.xzpm.CompanyTest"/>
+            &lt;!&ndash; 销售单位测试类 &ndash;&gt;
+            <class name="org.xzpm.MaterialCustomersTest"/>
+            &lt;!&ndash; 原辅料测试类 &ndash;&gt;
+            <class name="org.xzpm.MaterialMaterialsTest"/>
+            &lt;!&ndash; 进货信息测试类 &ndash;&gt;
+            <class name="org.xzpm.MaterialPurchaseTest"/>
+            &lt;!&ndash; 供应商测试类 &ndash;&gt;
+            <class name="org.xzpm.MaterialSuppliersTest"/>
+            &lt;!&ndash; 单品码变更批次测试类 &ndash;&gt;
+            <class name="org.xzpm.ChangeBatchTest"/>-->
+        </classes>
+    </test>
+    <listeners>
+        <!-- 添加ExtentRport监听 -->
+<!--        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>-->
+                <listener class-name="test_report.ExtentTestNGIReportListener"/>
+    </listeners>
+</suite>

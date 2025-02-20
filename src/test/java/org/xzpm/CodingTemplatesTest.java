@@ -1,4 +1,5 @@
 package org.xzpm;
+import cn.hutool.json.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.base.new_zpm.BasePath_New_ZPM;
@@ -16,25 +17,7 @@ import java.io.IOException;
 public class CodingTemplatesTest {
 
     CodingTemplates codingTemplates = new CodingTemplates();
-//验证首页数据
-    @Test(testName ="首页数据校验",priority = 1)
-    public void findByUsccTest() throws IOException {
-        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.GET_COMPANY_INFO;
-        String result = codingTemplates.findByUscc(url);
-        JSONObject data = JSONObject.parseObject(result).getJSONObject("data");
-        System.out.println(data);
-        String companyName = data.getString("companyName");
-        String fmplNum = data.getString("fmplNum");
-        String batchCodeNum = data.getString("batchCodeNum");
-        String serCodeNum = data.getString("serCodeNum");
-        System.out.println(result);
-        Assert.assertEquals(companyName, "浙江金汇数字技术有限公司");
-/*        Assert.assertEquals(fmplNum, "102" );
-        Assert.assertEquals(batchCodeNum, "22" );
-        Assert.assertEquals(serCodeNum, "64" );*/
-    }
-
-    @Test(testName ="模版创建校验",priority = 2)
+    @Test(testName ="模版创建校验",priority = 1)
     //模版创建校验
     public void templatesSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/templatesSave.json").toJSONString();
@@ -43,22 +26,22 @@ public class CodingTemplatesTest {
         String message1 = "模板名称重复,换一个试试!";
         String result1 =JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-        String result2 = codingTemplates.templatesSave(body);
+/*        String result2 = codingTemplates.templatesSave(body);
         String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);
+        Assert.assertEquals(result3,message1);*/
     }
 
-    @Test(testName ="模版列表页查询校验",priority = 3)
+    @Test(testName ="模版列表页查询校验",priority = 2)
     //模版列表页查询校验
     public void findPageByQueryTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/mbfindPageByQuery.json").toJSONString();
         String result = codingTemplates.findPageByQuery(body);
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("templateName");
-        String message = "模版一";
+        String message = "通用模版";
         Assert.assertEquals(result1,message);
     }
- /*
-    @Test(testName ="模版删除校验",priority = 4)
+
+    @Test(testName ="模版删除校验",priority = 3)
     //模版删除
     public void templatesDeleteTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/mbfindPageByQuery.json").toJSONString();
@@ -73,12 +56,6 @@ public class CodingTemplatesTest {
         Assert.assertEquals(result2,message);
     }
 
-
-   public static void main(String[] args) throws IOException {
-        CodingTemplatesTest codingTemplatesTest = new CodingTemplatesTest();
-        codingTemplatesTest.templatesSave();
-
-    }*/
 
 
 

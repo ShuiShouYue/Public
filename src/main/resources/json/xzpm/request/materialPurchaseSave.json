@@ -1,0 +1,28 @@
+{
+  "materialsId": "482848bd48da42f5bfe34e9d515f3a03",
+  "supplierName": "厦门红酒酒进出口有限公司",
+  "classifyType": "原材料分类",
+  "barCode": "1231",
+  "materialName": "瓶塞",
+  "specification": "3A",
+  "purchaseTime": "2025-01-01 00:00:00",
+  "checkName": "林森",
+  "purchaseCount": "33",
+  "purchaseUnit": "个",
+  "purchaseInventory": "33",
+  "verdictType": 1,
+  "supplierId": "543d92e25d11438ba6f58cddc22f9bee",
+  "materialFileList": [
+    {
+      "name": "验证报告9.png",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/4a33a7971f55a7b33a79090c3786bd30.png",
+      "fileName": "验证报告9.png",
+      "filePath": "elint/4a33a7971f55a7b33a79090c3786bd30.png",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/4a33a7971f55a7b33a79090c3786bd30.png",
+      "fileTypeCode": "PURCHASE_IMG",
+      "fileTypeName": "验收报告",
+      "uid": 1737703933653,
+      "status": "success"
+    }
+  ]
+}

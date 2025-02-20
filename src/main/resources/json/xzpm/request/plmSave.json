@@ -1,46 +1,122 @@
 {
   "languageType": "Chinese",
-  "jyCode": "1",
+  "jyCode": "4",
   "latsCode": "99",
-  "vendorCode": "20MA2J2JNK",
-  "coverImage": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/4685c13e0d470a6f13922e1fc2773ebd.png",
-  "picReport": "",
-  "certificateFile": "",
-  "cautionaryFile": "",
-  "leftMenu": [],
-  "bottomMenu": [],
-  "bottomImg": "bottom1.png",
-  "headImg": "top1.png",
-  "sPCategory": "工许产品/危险化学品石油产品",
+  "vendorCode": "2058989108",
+  "coverImage": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/c121d4c1fcbf7c38074189aca9a0bc83.jpeg,https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/e7ec4d565de4b346c703d592551bb6fa.jpg",
+  "picReport": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/9b29fc1d68af0ff271397203089fb0aa.png",
+  "certificateFile": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/38d1c7150e07d6057a0b53d495056182.png",
+  "cautionaryFile": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/4f926a3fc4d391cc3c988283016088f8.jpg",
+  "leftMenu": [
+    {
+      "Type": "TYPE_LINK",
+      "Title": "链接",
+      "Content": "https://www.baidu.com/",
+      "DisplayMode": "",
+      "OpenTarget": "_self"
+    },
+    {
+      "Type": "TYPE_TEXT",
+      "Title": "多文本",
+      "Content": "简介：杭州超尔切削工具有限公司成立于2012年03月13日，注册地位于萧山区新塘街道朱家坛村，法定代表人为卜学军。经营范围包括一般项目：金属工具制造；机械零件、零部件加工；机床功能部件及附件制造；汽车零部件及配件制造；塑料制品制造；金属工具销售；技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）。许可项目：货物进出口；技术进出口（依法须经批准的项目，经相关部门批准后方可开展经营活动，具体经营项目以审批结果为准）。",
+      "DisplayMode": "",
+      "OpenTarget": "_self"
+    },
+    {
+      "Type": "TYPE_RICH_TEXT",
+      "Title": "富文本",
+      "Content": "<p style=\"margin-left:0;\"><span style=\"color:rgb(0,0,0);\">简介：杭州超尔切削工具有限公司成立于2012年03月13日，注册地位于萧山区新塘街道朱家坛村，法定代表人为卜学军。经营范围包括一般项目：金属工具制造；机械零件、零部件加工；机床功能部件及附件制造；汽车零部件及配件制造；塑料制品制造；金属工具销售；技术服务、技术开发、技术咨询、技术交流、技术转让、技术推广（除依法须经批准的项目外，凭营业执照依法自主开展经营活动）。许可项目：货物进出口；技术进出口（依法须经批准的项目，经相关部门批准后方可开展经营活动，具体经营项目以审批结果为准）。<img style=\"max-width:380px\" src=\"https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/5c5c41a21bc2a9e8dbe60e7f3342291c.jpg\"></span></p>",
+      "DisplayMode": "",
+      "OpenTarget": "_self"
+    }
+  ],
+  "bottomMenu": [
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_JD",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "京东",
+      "order": 2
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_TB",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "淘宝",
+      "order": 4
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_WXGZH",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "微信公众号",
+      "order": 5
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_1688",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "1688",
+      "order": 6
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_CUSTOM",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "百度",
+      "order": 99
+    }
+  ],
+  "bottomImg": "bottom7.png",
+  "headImg": "top7.png",
+  "productName": "细工木板",
+  "sPCategory": "工许产品/普通细木工板",
   "rawMaterialInfo": [],
   "qsStaffInfo": [],
   "suitRange": "",
   "validPeriod": "",
-  "sPCategoryNo": "证书编号",
-  "productName": "工业",
-  "specifications": "规格型号11",
-  "productAddress": "生产地址",
-  "executionStandards": "执行标准",
-  "complaintTel": "售后电话",
-  "productUnit": "产品单元",
-  "factoryNumber": "出厂编号",
-  "brandName": "商标(品牌)",
-  "gPCKindCode": "10001686",
-  "gPCKindName": "喷枪（电动）",
-  "creditCode": "91330110MA2J2JNK0Q",
+  "gPCKindCode": "10005424",
+  "gPCKindName": "柱子/桩/棒",
+  "brandName": "品牌",
+  "specifications": "森森",
+  "warrantyTime": "3年",
+  "complaintTel": "010-110",
+  "executionStandards": "TB2025-330",
+  "sPCategoryNo": "20250111",
+  "creditCode": "91330109589891087U",
   "areaCode": "",
   "companyAddress": "",
-  "companyName": "浙江洁丽雅网络科技有限公司",
-  "themeCode": "#1D48AA",
+  "companyName": "杭州超尔切削工具有限公司",
+  "themeCode": "#027965",
   "isUpgrade": null,
   "materialsList": [
     {
       "supplierName": "厦门红酒酒进出口有限公司",
       "creditCode": "913502003030472283",
-      "materialId": "42e1481804474a30941f3f95eb5f8308",
+      "materialId": "f2f0c7a411d4470e81aa9955be58876c",
       "materialName": "瓶塞",
       "specification": "3A",
-      "purchaseBatchNo": "333"
+      "purchaseBatchNo": "333",
+      "purchaseTime": "2025-01-01",
+      "classifyType": "原材料分类",
+      "barCode": "1231",
+      "supplierId": "543d92e25d11438ba6f58cddc22f9bee",
+      "materialsId": "f2f0c7a411d4470e81aa9955be58876c"
     }
   ],
   "isOpen": "{\"picReport\":1}"

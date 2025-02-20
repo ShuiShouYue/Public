@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jxl">
+    <output-path>$PROJECT_DIR$/src/main/java/org/utils/excel/CWOutputFile</output-path>
+    <root id="archive" name="jxl.jar" />
+  </artifact>
+</component>

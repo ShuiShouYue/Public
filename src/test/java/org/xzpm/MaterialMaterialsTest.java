@@ -7,7 +7,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 import org.service.xzpm.MaterialMaterials;
 import java.io.IOException;
-
+/**
+ * 原材料管理
+ */
 public class MaterialMaterialsTest {
     MaterialMaterials materialMaterials= new MaterialMaterials();
     @Test(testName ="原辅料创建校验",priority = 1)
@@ -15,10 +17,11 @@ public class MaterialMaterialsTest {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialMaterials.json").toJSONString();
         String result = materialMaterials.save(body);
         String message = "成功";
-        String message1 = "模板名称重复,换一个试试!";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-/*        String result2 = materialSuppliers.save(body);
+/*
+        String message1 = "模板名称重复,换一个试试!";
+        String result2 = materialSuppliers.save(body);
         String result3 =JSONObject.parseObject(result2).getString("message");
         Assert.assertEquals(result3,message1);*/
     }

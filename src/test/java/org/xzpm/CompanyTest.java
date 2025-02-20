@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-
+/**
+ * 企业信息管理
+ */
 public class CompanyTest {
     Company company= new Company();
     @Test(testName ="企业信息保存校验",priority = 1)

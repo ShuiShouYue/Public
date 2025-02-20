@@ -8,7 +8,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-
+/**
+ * 供应商
+ */
 public class MaterialSuppliersTest {
     MaterialSuppliers materialSuppliers= new MaterialSuppliers();
     @Test(testName ="供应商创建校验",priority = 1)

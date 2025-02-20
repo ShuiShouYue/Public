@@ -15,6 +15,7 @@ import org.utils.api.AbstractFileReader;
 
 /**
  *  Description:JsonFileUtils
+ *  读取resources里面的JSON字符串，且过滤未空的字段
  */
 public final class JsonFileUtils {
     private JsonFileUtils(){}

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class MaterialCustomers {
     /**
-     * 经销商新增
+     * 销售单位新增
      */
     public String  save(String body) throws IOException {
         Http http = new Http();
@@ -19,7 +19,7 @@ public class MaterialCustomers {
     }
 
     /**
-     * 经销商查询
+     * 销售单位查询
      */
     public String  findPageByQuery(String body) throws IOException {
         Http http = new Http();
@@ -30,7 +30,7 @@ public class MaterialCustomers {
     }
 
     /**
-     * 经销商删除
+     * 销售单位删除
      */
     public String  delete(String url) throws IOException {
         Http http = new Http();

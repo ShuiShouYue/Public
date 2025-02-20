@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
+/**
+ *  去掉字符串String里为空的字段方法
+ */
 public class Stringnull {
     public static String trimnull(String string) throws UnsupportedEncodingException {
         ArrayList<Byte> list = new ArrayList<Byte>();

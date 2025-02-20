@@ -9,7 +9,9 @@ import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
 import java.io.IOException;
-
+/**
+ * 资质信息管理
+ */
 public class CompanyCredentialTest {
     static CompanyCredential companyCredential = new CompanyCredential();
     @Test(testName ="资质新增",priority = 1)
@@ -27,7 +29,7 @@ public class CompanyCredentialTest {
         String body = JsonFileUtils.readJson("/json/xzpm/request/companyCredentialFindPageByQuery.json").toJSONString();
         String result = companyCredential.findPageByQuery(body);
         System.out.println(result);
-        String message = "123";
+        String message = "20250111";
         String result1 = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("credentialNo");
         System.out.println(result1);
         Assert.assertEquals(result1,message);

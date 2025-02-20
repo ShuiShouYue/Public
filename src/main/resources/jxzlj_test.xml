@@ -3,8 +3,8 @@
     <test name="测试模块">
         <classes>
             <!-- 需要运行的测试类 -->
-<!--            <class name="org.xzpm.CodingTemplatesTest"/>-->
-            <class name="org.jxzlj.ApplyTest"/>
+            <class name="org.xzpm.CodingTemplatesTest"/>
+<!--            <class name="org.jxzlj.ApplyTest"/>
             <class name="org.jxzlj.ApplyRefuseTest1"/>
             <class name="org.jxzlj.ApplyRefuseTest2"/>
             <class name="org.jxzlj.ApplyRefuseTest3"/>
@@ -32,7 +32,7 @@
             <class name="org.jxzlj.PageSizeTest"/>
             <class name="org.jxzlj.SelectTest"/>
             <class name="org.jxzlj.FormTest"/>
-            <class name="org.jxzlj.UploadTest"/>
+            <class name="org.jxzlj.UploadTest"/>-->
         </classes>
     </test>
     <listeners>

@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CWOutputFile">
+    <output-path>$PROJECT_DIR$/src/main/java/org/utils/excel/CWOutputFile</output-path>
+    <root id="archive" name="CWOutputFile.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/org/utils/excel/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="directory" name="main">
+        <element id="directory" name="java">
+          <element id="directory" name="org">
+            <element id="directory" name="utils">
+              <element id="directory" name="excel">
+                <element id="file-copy" path="$PROJECT_DIR$/target/classes/org/utils/excel/CWOutputFile.class" />
+              </element>
+            </element>
+          </element>
+        </element>
+      </element>
+      <element id="module-output" name="test_api" />
+    </root>
+  </artifact>
+</component>
