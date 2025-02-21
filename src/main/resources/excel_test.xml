@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="测试套件">
+    <test name="测试模块">
+        <classes>
+            <!-- 需要运行的测试类 -->
+            <class name="org.excel.ExcelDateTest"/>
+        </classes>
+    </test>
+    <listeners>
+        <!-- 添加ExtentRport监听 -->
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+        <listener class-name="test_report.ExtentTestNGIReportListener"/>
+    </listeners>
+</suite>

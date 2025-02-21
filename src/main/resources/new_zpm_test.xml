@@ -29,7 +29,7 @@
     </test>
     <listeners>
         <!-- 添加ExtentRport监听 -->
-<!--        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>-->
-                <listener class-name="test_report.ExtentTestNGIReportListener"/>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+        <listener class-name="test_report.ExtentTestNGIReportListener"/>
     </listeners>
 </suite>
