@@ -121,6 +121,17 @@ public class BasePath_New_ZPM {
     public static final String UPDATEPWD ="/api/zpm/sys/sysUser/updatePwd";
 
 
+    //电动车上传
+    public static final String DDC_INFO ="/api/zpm/electric/info/importExcel";
+
+    //电池上传
+    public static final String DC_INFO ="/api/zpm/battery/info/importExcel";
+
+    //生产计量器具上传
+    public static final String SC_MEASURE ="api/zpm/measure/instrument/productImport";
+
+    //使用计量器具上传
+    public static final String SY_MEASURE ="/api/zpm/measure/instrument/usingImport";
     //-------------------------------接口路径-------------------------------------
 
 }

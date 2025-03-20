@@ -23,24 +23,18 @@ public class ProcessSave {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialSuppliers.json").toJSONString();
         String result = materialSuppliers.save(body);
         String message = "成功";
-        String message1 = "模板名称重复,换一个试试!";
         String result1 =JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-/*        String result2 = materialSuppliers.save(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);*/
+
     }
     @Test(testName ="原辅料创建校验",priority = 2)
     public void MaterialsSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialMaterials.json").toJSONString();
         String result = materialMaterials.save(body);
         String message = "成功";
-        String message1 = "模板名称重复,换一个试试!";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-/*        String result2 = materialSuppliers.save(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);*/
+
     }
 
 
@@ -50,12 +44,8 @@ public class ProcessSave {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialPurchaseSave.json").toJSONString();
         String result = materialPurchase.save(body);
         String message = "成功";
-        String message1 = "模板名称重复,换一个试试!";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-/*        String result2 = materialSuppliers.save(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);*/
     }
 
     @Test(testName ="品类码创建校验",priority = 4)

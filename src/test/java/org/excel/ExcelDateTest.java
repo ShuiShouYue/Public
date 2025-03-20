@@ -15,17 +15,26 @@ public class ExcelDateTest {
     @DataProvider(name="testData")
     public Object[][] provider(){
         ExcelVoid excel = new ExcelVoid();
-        return excel.read("D:\\IDEA\\git\\src\\main\\resources\\excel\\测试数据.xls",1,5,1,2);
+        return excel.read("D:\\IDEA\\git\\src\\main\\resources\\excel\\测试数据.xls",2,8,1,3);
     }
     //参数返回的数组作为用例的输入（String url,String data），并循环输出结果
     @Test(dataProvider="testData")
-    public void getResult(String url,String data) throws IOException {
+    public void getResult(String url,String data,String num) throws IOException {
         System.out.println();
         Http http = new Http();
-        String result = http.postChange("Bearer 0c55e5e0-af0d-43dd-9f35-0bad7f2ec4ad",url,data);
-        String message = "成功";
+        String result = http.postChange("Bearer b52cc6bc-859c-47a6-a8ae-423f676550b9",url,data);
+        /*String message = num;*/
         String result1 = JSONObject.parseObject(result).getString("message");
         System.out.println(result1);
-        Assert.assertEquals(result1,message);
+        if (result1.equals(num)){
+
+        }
+        else {
+            System.out.println(url);
+        }
+        Assert.assertEquals(result1,num);
+
     }
+
+
 }

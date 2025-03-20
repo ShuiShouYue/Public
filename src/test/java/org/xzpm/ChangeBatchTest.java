@@ -10,7 +10,9 @@ import org.utils.JsonFileUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
-
+/**
+ * 批次变更校验
+ */
 public class ChangeBatchTest {
     static SamplingProduct samplingProduct = new SamplingProduct();
 

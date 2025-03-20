@@ -4,6 +4,10 @@ import com.alibaba.fastjson.JSONObject;
 import org.base.new_zpm.BasePath_New_ZPM;
 import org.service.xzpm.CompanyBrand;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.utils.JsonFileUtils;
 
@@ -12,6 +16,11 @@ import java.io.IOException;
  * 品牌信息
  */
 public class CompanyBrandTest {
+    @BeforeMethod
+    public void getTestClassName(){
+        System.out.println(this.getClass().getMethods());
+    }
+
     static CompanyBrand companyBrand = new CompanyBrand();
     @Test(testName ="品牌新增",priority = 1)
     public void saveTest() throws IOException {
@@ -25,6 +34,7 @@ public class CompanyBrandTest {
     @Test(testName ="品牌列表页查询校验",priority = 2)
 
     public void FindPageByQueryTest() throws  IOException {
+
         String body = JsonFileUtils.readJson("/json/xzpm/request/companyBrandFindPageByQuery.json").toJSONString();
         String result = companyBrand.findPageByQuery(body);
         String message = "品牌名称";
@@ -43,5 +53,6 @@ public class CompanyBrandTest {
         String result1 = companyBrand.delete(url);
         String result2 = JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
+
     }
 }

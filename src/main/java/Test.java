@@ -23,10 +23,9 @@ public class Test {
 
 
 
-        JSONObject result = JsonFileUtils.readJson("/json/xzpm/request/a.json");
+        String result = GetJsonUtil.getJson("/json/xzpm/request/a.json");
         System.out.println(result);
-        String a = result.toString();
-        System.out.println(a);
+
 
 /*        CodingTemplates codingTemplates = new CodingTemplates();
 
