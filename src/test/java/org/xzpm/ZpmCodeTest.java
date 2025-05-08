@@ -3,7 +3,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.service.xzpm.ZpmCode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 import org.base.new_zpm.BasePath_New_ZPM;
 import java.io.IOException;
 
@@ -43,7 +43,6 @@ public class ZpmCodeTest {
         String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.BATCH_CODE_DELETE + "?id="+id;
         String result1 = zpmCode.deleteBatch(url);
         String result2 = JSONObject.parseObject(result1).getString("message");
-
         Assert.assertEquals(result2,message);
     }
 
@@ -80,6 +79,7 @@ public class ZpmCodeTest {
         String result1 = zpmCode.deleteDpmById(url);
         String result2 =JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
+
     }
 
     @Test(testName ="流向信息创建校验",priority = 7)

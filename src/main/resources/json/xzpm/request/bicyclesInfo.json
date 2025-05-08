@@ -1,0 +1,42 @@
+{
+  "manufacturer": "林林电动科技有限公司",
+  "companyName": "森森电动科技有限公司",
+  "model": "TDT44Z",
+  "color": "绿",
+  "undefined": "电动车合格证1.jpg",
+  "fileList": [
+    {
+      "name": "电动车2.jpg",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/4eb5e43c88991c1b4d8f23fd2f6bac7e.jpg",
+      "fileName": "电动车2.jpg",
+      "filePath": "elint/4eb5e43c88991c1b4d8f23fd2f6bac7e.jpg",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/4eb5e43c88991c1b4d8f23fd2f6bac7e.jpg",
+      "fileTypeCode": "BICYCLES_IMAGE",
+      "fileTypeName": "电动自行车图片",
+      "uid": 1742452282448,
+      "status": "success"
+    },
+    {
+      "name": "电动车3.jpg",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/8fd3ebc84c77b11acf7edbea9386998c.jpg",
+      "fileName": "电动车3.jpg",
+      "filePath": "elint/8fd3ebc84c77b11acf7edbea9386998c.jpg",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/8fd3ebc84c77b11acf7edbea9386998c.jpg",
+      "fileTypeCode": "BICYCLES_IMAGE",
+      "fileTypeName": "电动自行车图片",
+      "uid": 1742452285104,
+      "status": "success"
+    },
+    {
+      "name": "电动车合格证1.jpg",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/91b83d1ca25097ad87a7f32079c4eebf.jpg",
+      "fileName": "电动车合格证1.jpg",
+      "filePath": "elint/91b83d1ca25097ad87a7f32079c4eebf.jpg",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/91b83d1ca25097ad87a7f32079c4eebf.jpg",
+      "fileTypeCode": "CERTIFICATE_INSPECTION",
+      "fileTypeName": "检验合格证明",
+      "uid": 1742452290675,
+      "status": "success"
+    }
+  ]
+}

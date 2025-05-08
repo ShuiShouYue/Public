@@ -5,7 +5,7 @@ import org.service.xzpm.*;
 import com.alibaba.fastjson.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,6 +19,9 @@ public class ProcessDelete {
     static ZpmCode zpmCode = new ZpmCode();
     MaterialCustomers materialCustomers= new MaterialCustomers();
     MaterialPurchase materialPurchase= new MaterialPurchase();
+    static CompanyBrand companyBrand = new CompanyBrand();
+    static CompanyCredential companyCredential = new CompanyCredential();
+
     @Test(testName ="流向信息删除校验",priority = 1)
     public void deleteFlowDetailsTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/flowDetailsfindPageDpm.json").toJSONString();
@@ -130,6 +133,45 @@ public class ProcessDelete {
         System.out.println(url);
         String result1 = materialPurchase.delete(url);
         String result2 =JSONObject.parseObject(result1).getString("message");
+        Assert.assertEquals(result2,message);
+    }
+
+    @Test(testName ="品牌删除校验",priority = 9)
+
+    public void deleteTest() throws  IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
+        String result = companyBrand.findPageByQuery(body);
+        String message = "成功";
+        String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.COMPANY_BRAND_DELETE + "?id="+id;
+        String result1 = companyBrand.delete(url);
+        String result2 = JSONObject.parseObject(result1).getString("message");
+        Assert.assertEquals(result2,message);
+
+    }
+    @Test(testName ="品牌删除校验",priority = 3)
+
+    public void companyBrandDeleteTest() throws  IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
+        String result = companyBrand.findPageByQuery(body);
+        String message = "成功";
+        String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.COMPANY_BRAND_DELETE + "?id="+id;
+        String result1 = companyBrand.delete(url);
+        String result2 = JSONObject.parseObject(result1).getString("message");
+        Assert.assertEquals(result2,message);
+
+    }
+    @Test(testName ="资质删除校验",priority = 3)
+
+    public void companyCredentialDeleteTest() throws  IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
+        String result = companyCredential.findPageByQuery(body);
+        String message = "成功";
+        String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.COMPANY_CREDENTIAL_DELETE + "?id="+id;
+        String result1 = companyCredential.delete(url);
+        String result2 = JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
     }
 }

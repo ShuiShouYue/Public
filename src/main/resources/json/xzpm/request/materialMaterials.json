@@ -5,24 +5,27 @@
   "contactName": null,
   "contactPhone": null,
   "classifyType": "原材料分类",
-  "barCode": "1231",
-  "supplierId": "543d92e25d11438ba6f58cddc22f9bee",
+  "barCode": "PIN154151",
+  "personnelType": 1,
+  "supplierId": "71ab54bbea804d0c85391c90d47e0fa1",
   "supplierName": "厦门红酒酒进出口有限公司",
-  "purchaseTime": "2025-01-01 00:00:00",
-  "materialName": "瓶塞",
+  "purchaseTime": "2025-05-01 00:00:00",
   "specification": "3A",
-  "purchaseBatchNo": "333",
-  "purchaseTotal": "33",
+  "purchaseBatchNo": "111",
+  "purchaseTotal": "3",
   "unitType": "个",
-  "materialFileList": [{
-    "name": "杭州超尔切削工具有限公司logo.jpg",
-    "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
-    "fileName": "杭州超尔切削工具有限公司logo.jpg",
-    "filePath": "elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
-    "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/6c561e0c2a699b0c14b64738f4913c2b.jpg",
-    "fileTypeCode": "MATERIALS_LOGO",
-    "fileTypeName": "商标",
-    "uid": 1737703414139,
-    "status": "success"
-  }]
+  "materialName": "瓶塞",
+  "materialFileList": [
+    {
+      "name": "logo.png",
+      "url": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/8df68b26bd88d276f121c24e231738fb.png",
+      "fileName": "logo.png",
+      "filePath": "elint/8df68b26bd88d276f121c24e231738fb.png",
+      "fileUrl": "https://jsb2022321.oss-cn-hangzhou.aliyuncs.com/elint/8df68b26bd88d276f121c24e231738fb.png",
+      "fileTypeCode": "MATERIALS_LOGO",
+      "fileTypeName": "商标",
+      "uid": 1746694533231,
+      "status": "success"
+    }
+  ]
 }

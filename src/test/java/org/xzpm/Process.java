@@ -3,7 +3,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.service.xzpm.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 import java.io.IOException;
 import org.base.new_zpm.BasePath_New_ZPM;
 import java.util.HashMap;
@@ -19,6 +19,8 @@ public class Process {
     ZpmCode zpmCode = new ZpmCode();
     MaterialCustomers materialCustomers= new MaterialCustomers();
     MaterialPurchase materialPurchase= new MaterialPurchase();
+    static CompanyCredential companyCredential = new CompanyCredential();
+    static CompanyBrand companyBrand = new CompanyBrand();
     @Test(testName ="供应商创建校验",priority = 1)
     public void SuppliersSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialSuppliers.json").toJSONString();
@@ -56,21 +58,42 @@ public class Process {
         Assert.assertEquals(result1,message);
         Thread.sleep(2000);
     }
-
-
-    @Test(testName ="品类码创建校验",priority = 4)
-    //品类码创建校验(json文件的LatsCode每次需要更新)
-    public void samplingProductSaveTest() throws IOException, InterruptedException {
-        String body = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json").toJSONString();
-        String result = samplingProduct.plmSave(body);
-        System.out.println(result);
+    @Test(testName ="资质新增",priority = 4)
+    public void companyCredentialSaveTest() throws IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/companyCredentialSave.json").toJSONString();
+        String result = companyCredential.save(body);
         String message = "成功";
         String result1 = JSONObject.parseObject(result).getString("message");
-        Assert.assertEquals(result1,message);
-        Thread.sleep(2000);
+        Assert.assertEquals(message,result1);
+    }
+    @Test(testName ="品牌新增",priority = 5)
+    public void saveTest() throws IOException, InterruptedException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/companyBrandSave.json").toJSONString();
+        String result = companyBrand.save(body);
+        String message = "成功";
+        String result1 = JSONObject.parseObject(result).getString("message");
+        Assert.assertEquals(message,result1);
+        Thread.sleep(1000);
     }
 
-    @Test(testName ="批次码创建校验",priority = 5)
+    @Test(testName ="品类码创建校验",priority = 6)
+    public void samplingProductSaveTest() throws IOException, InterruptedException {
+            String body1 = JsonFileUtils.readJson("/json/xzpm/request/companyBrandFindPageByQuery.json").toJSONString();
+            String result0 = companyBrand.findPageByQuery(body1);
+            String result00 = JSONObject.parseObject(result0).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+            JSONObject body0 = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json");
+            body0.put("brandNameId",result00);
+            String body = body0.toString();
+
+            String result = samplingProduct.plmSave(body);
+            System.out.println(result);
+            String message = "成功";
+            String result1 = JSONObject.parseObject(result).getString("message");
+            Assert.assertEquals(result1,message);
+
+    }
+
+    @Test(testName ="批次码创建校验",priority = 7)
     //批次码创建校验(JSON文件每次需要变更批次码CODE（batchCode）的数据，因为批次码是软删除)
     public void saveBatchTest() throws IOException, InterruptedException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/saveBatch.json").toJSONString();
@@ -81,7 +104,7 @@ public class Process {
         Thread.sleep(2000);
     }
 
-    @Test(testName ="单品码创建校验",priority = 6)
+    @Test(testName ="单品码创建校验",priority = 8)
     public void saveDpmTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/saveDpm.json").toJSONString();
         String result = zpmCode.saveDpm(body);
@@ -90,7 +113,7 @@ public class Process {
         Assert.assertEquals(result1,message);
     }
 
-    @Test(testName ="销售单位创建校验",priority = 7)
+    @Test(testName ="销售单位创建校验",priority = 9)
     public void customersSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialCustomersSave.json").toJSONString();
         String result = materialCustomers.save(body);
@@ -100,7 +123,7 @@ public class Process {
         Assert.assertEquals(result1,message);
 
     }
-    @Test(testName ="流向信息创建校验",priority = 8)
+    @Test(testName ="流向信息创建校验",priority = 10)
     public void saveFlowDetailsTest() throws IOException, InterruptedException {
         JSONObject body1 = JsonFileUtils.readJson("/json/xzpm/request/saveFlowDetails.json");
         String result = zpmCode.saveFlowDetails(body1.toJSONString());
@@ -110,7 +133,7 @@ public class Process {
         Thread.sleep(10000);
     }
 
-    @Test(testName ="流向信息删除校验",priority = 9)
+    @Test(testName ="流向信息删除校验",priority = 11)
     public void deleteFlowDetailsTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/flowDetailsfindPageDpm.json").toJSONString();
         String result = zpmCode.flowDetailsFindByIdDpm(body);
@@ -123,7 +146,7 @@ public class Process {
         Assert.assertEquals(result2,message);
     }
 
-    @Test(testName ="销售单位删除校验",priority = 10)
+    @Test(testName ="销售单位删除校验",priority = 12)
     public void customersDeleteTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/customersFindPageByQuery.json").toJSONString();
         String result = materialCustomers.findPageByQuery(body);
@@ -136,7 +159,7 @@ public class Process {
         Assert.assertEquals(result2,message);
 
     }
-    @Test(testName ="单品码删除校验",priority = 11)
+    @Test(testName ="单品码删除校验",priority = 13)
     //单品码删除校验
     public void deleteDpmTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageDpm.json").toJSONString();
@@ -149,7 +172,7 @@ public class Process {
         String result2 =JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
     }
-    @Test(testName ="批次码删除校验",priority = 12)
+    @Test(testName ="批次码删除校验",priority = 14)
     //批次码删除校验
     public void deleteBatchTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
@@ -163,12 +186,12 @@ public class Process {
         Assert.assertEquals(result2,message);
     }
 
-    @Test(testName ="品类码删除校验",priority = 13)
+    @Test(testName ="品类码删除校验",priority = 15)
     //品类码删除校验
     public void setProductQRCodeInvalidTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageCompanyProduct.json").toJSONString();
         String result = samplingProduct.findPageCompanyProduct(body);
-        String CodeID = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("codeId");
+         String CodeID = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("codeId");
         String UnifiedCode =JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("unifiedCode");
 
         HashMap<String, String> objectObjectHashMap = new HashMap<>();
@@ -183,7 +206,7 @@ public class Process {
         Assert.assertEquals(result2,message2);
     }
 
-    @Test(testName ="原辅料删除校验",priority = 14)
+    @Test(testName ="原辅料删除校验",priority = 16)
     public void MaterialsDeleteTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageByQuery.json").toJSONString();
         String result = materialMaterials.findPageByQuery(body);
@@ -196,7 +219,7 @@ public class Process {
         Assert.assertEquals(result2,message);
     }
 
-    @Test(testName ="供应商删除校验",priority = 15)
+    @Test(testName ="供应商删除校验",priority = 17)
     public void SuppliersDeleteTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/findPageByQuery.json").toJSONString();
         String result = materialSuppliers.findPageByQuery(body);
@@ -208,7 +231,7 @@ public class Process {
         String result2 =JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
     }
-    @Test(testName ="进货信息删除校验",priority = 16)
+    @Test(testName ="进货信息删除校验",priority = 18)
     public void PurchaseDeleteTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialPurchaseFind.json").toJSONString();
         String result = materialPurchase.findPageByQuery(body);
@@ -218,6 +241,30 @@ public class Process {
         System.out.println(url);
         String result1 = materialPurchase.delete(url);
         String result2 =JSONObject.parseObject(result1).getString("message");
+        Assert.assertEquals(result2,message);
+    }
+    @Test(testName ="品牌删除校验",priority = 19)
+    public void companyBrandDeleteTest() throws  IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
+        String result = companyBrand.findPageByQuery(body);
+        String message = "成功";
+        String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.COMPANY_BRAND_DELETE + "?id="+id;
+        String result1 = companyBrand.delete(url);
+        String result2 = JSONObject.parseObject(result1).getString("message");
+        Assert.assertEquals(result2,message);
+
+    }
+    @Test(testName ="资质删除校验",priority = 20)
+
+    public void companyCredentialDeleteTest() throws  IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
+        String result = companyCredential.findPageByQuery(body);
+        String message = "成功";
+        String id = JSONObject.parseObject(result).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        String url = BasePath_New_ZPM.ZPM_IP + BasePath_New_ZPM.COMPANY_CREDENTIAL_DELETE + "?id="+id;
+        String result1 = companyCredential.delete(url);
+        String result2 = JSONObject.parseObject(result1).getString("message");
         Assert.assertEquals(result2,message);
     }
 }

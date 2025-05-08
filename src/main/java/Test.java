@@ -1,8 +1,5 @@
-import com.alibaba.fastjson.JSONObject;
-import jxl.read.biff.BiffException;
-import org.utils.GetJsonUtil;
-import org.utils.JsonFileUtils;
-import org.utils.excel.ExcelData;
+import org.utils.readJson.isnull.GetJsonUtil;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.IOException;
 
@@ -25,6 +22,8 @@ public class Test {
 
         String result = GetJsonUtil.getJson("/json/xzpm/request/a.json");
         System.out.println(result);
+        String result1 = JsonFileUtils.readJson("/json/xzpm/request/a.json").toJSONString();
+        System.out.println(result1);
 
 
 /*        CodingTemplates codingTemplates = new CodingTemplates();

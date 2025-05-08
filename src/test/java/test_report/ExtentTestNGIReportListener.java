@@ -159,7 +159,7 @@ public class ExtentTestNGIReportListener implements IReporter {
                         name= name.substring(0,49)+"...";
                     }
                 }else{
-                    name = result.getMethod().getMethodName();
+                    name = result.getMethod().getMethodName();//
                 }
                 if(extenttest==null){
                     test = extent.createTest(name);
@@ -169,9 +169,9 @@ public class ExtentTestNGIReportListener implements IReporter {
                 }
                 //test.getModel().setDescription(description.toString());
                 //test = extent.createTest(result.getMethod().getMethodName());
-                for (String group : result.getMethod().getGroups()) {
+                for (String group : result.getMethod().getGroups()) {//getMethod().getGroups()
                     test.assignCategory(group);
-                    test.assignCategory(result.getMethod().getDescription());//描述
+                    test.assignCategory(result.getMethod().getDescription());//描述.getMethod().getDescription()
                 }
 
                 List<String> outputList = Reporter.getOutput(result);

@@ -1,6 +1,6 @@
-package org.utils;
+package org.utils.readJson.notnull;
 import org.apache.commons.io.FileUtils;
-import org.utils.api.AbstractFileReader;
+import org.utils.readJson.notnull.AbstractFileReader;
 
 import java.io.File;
 import java.io.IOException;

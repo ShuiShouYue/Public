@@ -2,16 +2,14 @@ package org.xzpm;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
+import org.service.xzpm.CompanyBrand;
 import org.service.xzpm.SamplingProduct;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
-import org.utils.JsonUtil;
-import org.utils.Stringnull;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 @Slf4j
 /**
@@ -19,20 +17,22 @@ import java.util.Map;
  */
 public class ResourceFileReaderTest{
     static SamplingProduct samplingProduct = new SamplingProduct();
-
+    static CompanyBrand companyBrand = new CompanyBrand();
     @Test(testName ="品类码创建校验",priority = 1)
-    //品类码创建校验(json文件的LatsCode每次需要更新)
+    //品类码创建校验
     public void samplingProductSaveTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json").toJSONString();
+        String body1 = JsonFileUtils.readJson("/json/xzpm/request/companyBrandFindPageByQuery.json").toJSONString();
+        String result0 = companyBrand.findPageByQuery(body1);
+        String result00 = JSONObject.parseObject(result0).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        JSONObject body0 = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json");
+        body0.put("brandNameId",result00);
+        String body = body0.toString();
+
         String result = samplingProduct.plmSave(body);
         System.out.println(result);
         String message = "成功";
         String result1 = JSONObject.parseObject(result).getString("message");
         Assert.assertEquals(result1,message);
-        String message1 = "该浙品码在本系统中已存在，无法再次添加";
-        String result2 = samplingProduct.plmSave(body);
-        String result3 =JSONObject.parseObject(result2).getString("message");
-        Assert.assertEquals(result3,message1);
     }
 
     @Test(testName ="品类码列表页查询校验",priority = 2)

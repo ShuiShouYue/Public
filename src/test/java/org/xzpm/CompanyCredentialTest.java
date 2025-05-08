@@ -6,7 +6,7 @@ import org.base.new_zpm.BasePath_New_ZPM;
 import org.service.xzpm.CompanyCredential;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.IOException;
 /**
@@ -15,7 +15,7 @@ import java.io.IOException;
 public class CompanyCredentialTest {
     static CompanyCredential companyCredential = new CompanyCredential();
     @Test(testName ="资质新增",priority = 1)
-    public void saveTest() throws IOException {
+    public void companyCredentialSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/companyCredentialSave.json").toJSONString();
         String result = companyCredential.save(body);
         String message = "成功";
@@ -37,7 +37,7 @@ public class CompanyCredentialTest {
 
     @Test(testName ="资质删除校验",priority = 3)
 
-    public void deleteTest() throws  IOException {
+    public void companyCredentialDeleteTest() throws  IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/pcmFindPageByQuery.json").toJSONString();
         String result = companyCredential.findPageByQuery(body);
         String message = "成功";

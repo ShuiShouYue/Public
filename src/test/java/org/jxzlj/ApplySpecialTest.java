@@ -7,7 +7,7 @@ import org.base.jxzlj.BasePath_JXZLJ;
 import org.service.jxzlj.Apply;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package org.utils;
+package org.utils.readJson.notnull;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -7,11 +7,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONArray;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.alibaba.fastjson.JSONObject;
-import org.utils.api.AbstractFileReader;
 
 /**
  *  Description:JsonFileUtils

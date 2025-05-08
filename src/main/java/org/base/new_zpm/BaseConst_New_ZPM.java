@@ -1,7 +1,7 @@
 package org.base.new_zpm;
 
 public class BaseConst_New_ZPM {
-    public static  String Token_xzpm = "Bearer 47bb66e1-ccc7-43ca-a4ff-a9b905c15b21";
+    public static  String Token_xzpm = "Bearer 21735eb9-cde7-4aab-b0f7-1681d20cfad9";
 
     public BaseConst_New_ZPM() {
     }

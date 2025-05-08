@@ -5,7 +5,7 @@ import org.base.jxzlj.BaseConst_JXZLJ;
 import org.service.jxzlj.Apply;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 import org.utils.random.name.RandomNames;
 import org.utils.random.uid.Uid;
 

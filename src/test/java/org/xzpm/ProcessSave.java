@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.service.xzpm.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.IOException;
 /**
@@ -17,7 +17,8 @@ public class ProcessSave {
     static ZpmCode zpmCode = new ZpmCode();
     MaterialCustomers materialCustomers= new MaterialCustomers();
     MaterialPurchase materialPurchase= new MaterialPurchase();
-
+    static CompanyBrand companyBrand = new CompanyBrand();
+    static CompanyCredential companyCredential = new CompanyCredential();
     @Test(testName ="供应商创建校验",priority = 1)
     public void SuppliersSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialSuppliers.json").toJSONString();
@@ -48,10 +49,31 @@ public class ProcessSave {
         Assert.assertEquals(result1,message);
     }
 
-    @Test(testName ="品类码创建校验",priority = 4)
-    //品类码创建校验(json文件的LatsCode每次需要更新)
+    @Test(testName ="品牌新增",priority = 4)
+    public void saveTest() throws IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/companyBrandSave.json").toJSONString();
+        String result = companyBrand.save(body);
+        String message = "成功";
+        String result1 = JSONObject.parseObject(result).getString("message");
+        Assert.assertEquals(message,result1);
+    }
+    @Test(testName ="资质新增",priority = 5)
+    public void companyCredentialSaveTest() throws IOException {
+        String body = JsonFileUtils.readJson("/json/xzpm/request/companyCredentialSave.json").toJSONString();
+        String result = companyCredential.save(body);
+        String message = "成功";
+        String result1 = JSONObject.parseObject(result).getString("message");
+        Assert.assertEquals(message,result1);
+    }
+    @Test(testName ="品类码创建校验",priority = 6)
     public void samplingProductSaveTest() throws IOException {
-        String body = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json").toJSONString();
+        String body1 = JsonFileUtils.readJson("/json/xzpm/request/companyBrandFindPageByQuery.json").toJSONString();
+        String result0 = companyBrand.findPageByQuery(body1);
+        String result00 = JSONObject.parseObject(result0).getJSONObject("data").getJSONArray("list").getJSONObject(0).getString("id");
+        JSONObject body0 = JsonFileUtils.readJson("/json/xzpm/request/plmSave.json");
+        body0.put("brandNameId",result00);
+        String body = body0.toString();
+
         String result = samplingProduct.plmSave(body);
         System.out.println(result);
         String message = "成功";
@@ -63,7 +85,7 @@ public class ProcessSave {
         Assert.assertEquals(result3,message1);
     }
 
-    @Test(testName ="批次码创建校验",priority = 5)
+    @Test(testName ="批次码创建校验",priority = 7)
     //批次码创建校验(JSON文件每次需要变更批次码CODE（batchCode）的数据，因为批次码是软删除)
     public void saveBatchTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/saveBatch.json").toJSONString();
@@ -73,7 +95,7 @@ public class ProcessSave {
         Assert.assertEquals(message,result1);
     }
 
-    @Test(testName ="单品码创建校验",priority = 6)
+    @Test(testName ="单品码创建校验",priority = 8)
     public void saveDpmTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/saveDpm.json").toJSONString();
         String result = zpmCode.saveDpm(body);
@@ -82,7 +104,7 @@ public class ProcessSave {
         Assert.assertEquals(result1,message);
     }
 
-    @Test(testName ="经销商创建校验",priority = 7)
+    @Test(testName ="经销商创建校验",priority = 9)
     public void customersSaveTest() throws IOException {
         String body = JsonFileUtils.readJson("/json/xzpm/request/materialCustomersSave.json").toJSONString();
         String result = materialCustomers.save(body);
@@ -91,7 +113,7 @@ public class ProcessSave {
         Assert.assertEquals(result1,message);
 
     }
-    @Test(testName ="流向信息创建校验",priority = 8)
+    @Test(testName ="流向信息创建校验",priority = 10)
     public void saveFlowDetailsTest() throws IOException {
         JSONObject body1 = JsonFileUtils.readJson("/json/xzpm/request/saveFlowDetails.json");
         String result = zpmCode.saveFlowDetails(body1.toJSONString());

@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.service.xzpm.SysUser;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 
 import java.io.IOException;
 

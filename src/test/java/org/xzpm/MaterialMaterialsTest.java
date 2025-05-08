@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.base.new_zpm.BasePath_New_ZPM;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.utils.JsonFileUtils;
+import org.utils.readJson.notnull.JsonFileUtils;
 import org.service.xzpm.MaterialMaterials;
 import java.io.IOException;
 /**
@@ -29,7 +29,7 @@ public class MaterialMaterialsTest {
     @Test(testName ="原辅料查询校验",priority = 2)
     public void MaterialsFindPageByQueryTest() throws IOException {
         JSONObject jsonObject= JsonFileUtils.readJson("/json/xzpm/request/findPageByQuery.json");
-        jsonObject.put("purchaseBatchNo","333");
+        jsonObject.put("purchaseBatchNo","111");
         jsonObject.put("specification","3A");
         String body = jsonObject.toString();
         System.out.println(body);

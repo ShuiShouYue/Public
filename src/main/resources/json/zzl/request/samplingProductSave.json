@@ -1,0 +1,177 @@
+{
+  "ManufacturerCode": "2061840927",
+  "ProductName": "大宝",
+  "Specifications": "33*33",
+  "VendorCode": "2061840927",
+  "LatsCode": "77",
+  "SPCategory": "其他",
+  "BatchNo": "",
+  "SerialCode": "",
+  "LinkUrl": "",
+  "ProductionDate": "",
+  "ProductionAddress": "",
+  "ComplaintTel": "011-121313",
+  "StdType": "",
+  "StandardNo": "",
+  "NetContent": "",
+  "NetContentUnit": "",
+  "BaseKeywords": "",
+  "PicReport": "",
+  "CoverImage": "http://192.168.82.164:10060/zzlapi/sys/file/rest/down/enpsMzNjNTFiYjAzNGUzZDkzYzUyY2UyNjAxMmQ3M2Y3ZTAucG5n/欧莱雅0.png,http://192.168.82.164:10060/zzlapi/sys/file/rest/down/enpsYzEyMWQ0YzFmY2JmN2MzODA3NDE4OWFjYTlhMGJjODMuanBlZw==/细工木板.jpeg",
+  "CodeType": 1,
+  "GPCKindCode": "10000669",
+  "GPCKindName": "化妆品组合装",
+  "BrandName": "欧莱雅",
+  "Material": "",
+  "SPCategoryNo": "20251121",
+  "GxProduct": "",
+  "ExtendItems": [
+    {
+      "visible": true,
+      "value": "绿色",
+      "key": "颜色"
+    },
+    {
+      "visible": false,
+      "value": "亮白",
+      "key": "颜色1"
+    },
+    {
+      "key": "NutritionTableData",
+      "value": "{\"isShow\":true,\"topicTitle\":\"成分表\",\"titles\":[{\"name\":\"成分\",\"checked\":false},{\"name\":\"每100毫升/per 100ML\",\"checked\":false}],\"values\":[{\"value1\":\"面乳\",\"value2\":\"50\",\"value3\":null}]}",
+      "visible": true
+    }
+  ],
+  "JyCode": "",
+  "DistributorType": 1,
+  "CreditCode": "914401016184092708",
+  "ThemeCode": "#027965",
+  "PicText": "",
+  "BottomMenu": [
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_JD",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "京东",
+      "order": 2
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_TB",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "淘宝",
+      "order": 4
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_WXGZH",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "微信公众号",
+      "order": 5
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_1688",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "1688",
+      "order": 6
+    },
+    {
+      "Type": "H5",
+      "AppFlag": "BOTTOM_MENU_CUSTOM",
+      "Ico": "",
+      "Param": {
+        "Url": "https://www.baidu.com/"
+      },
+      "Title": "自定义",
+      "order": 99
+    }
+  ],
+  "CompanyAddress": "",
+  "CompanyName": "宝洁（中国）有限公司",
+  "BottomData": {
+    "BottomTitle": "",
+    "BottomValue": "",
+    "bottomTitle": "",
+    "bottomValue": ""
+  },
+  "HeadData": {
+    "TopTitle": "",
+    "TopValue": "",
+    "topTitle": "",
+    "topValue": ""
+  },
+  "LeftMenu": [
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_LINK",
+      "Content": "https://www.baidu.com/",
+      "Title": "链接",
+      "OpenTarget": "_self"
+    },
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_TEXT",
+      "Content": "厦门红酒酒进出口有限公司成立于2015年05月04日，注册地位于厦门市同安区新民镇禾山村新桥里11-1号2楼，法定代表人为黄志忠。经营范围包括酒、饮料及茶叶批发；其他预包装食品批发；其他散装食品批发；酒、饮料及茶叶零售；预包装食品零售；散装食品零售；纺织品、针织品及原料批发；服装批发；鞋帽批发；五金产品批发；经营各类商品和技术的进出口（不另附进出口商品目录），但国家限定公司经营或禁止进出口的商品及技术除外；其他未列明批发业（不含需经许可审批的经营项目）。",
+      "Title": "文本",
+      "OpenTarget": "_self"
+    },
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_RICH_TEXT",
+      "Content": "<p style=\"margin-left:0;\"><span style=\"color:rgb(0,0,0);\">厦门红酒酒进出口有限公司成立于2015年05月04日，注册地位于厦门市同安区新民镇禾山村新桥里11-1号2楼，法定代表人为黄志忠。经营范围包括酒、饮料及茶叶批发；其他预包装食品批发；其他散装食品批发；酒、饮料及茶叶零售；预包装食品零售；散装食品零售；纺织品、针织品及原料批发；服装批发；鞋帽批发；五金产品批发；经营各类商品和技术的进出口（不另附进出口商品目录），但国家限定公司经营或禁止进出口的商品及技术除外；其他未列明批发业（不含需经许可审批的经营项目）。<img style=\"max-width:380px\" src=\"http://192.168.82.164:10060/zzlapi/sys/file/rest/down/enpsNWM1YzQxYTIxYmMyYTllOGRiZTYwZTdmMzM0MjI5MWMuanBn/验钞机1.jpg\"></span></p>",
+      "Title": "富文本",
+      "OpenTarget": "_self"
+    },
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_TRACE_INFO",
+      "Content": "",
+      "Title": "溯源信息",
+      "OpenTarget": "_self"
+    },
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_XFFK",
+      "Content": "",
+      "Title": "消费反馈",
+      "OpenTarget": "_self"
+    },
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_FWCX",
+      "Content": "",
+      "Title": "防伪查询",
+      "OpenTarget": "_self"
+    },
+    {
+      "DisplayMode": "",
+      "Type": "TYPE_XFJS",
+      "Content": "",
+      "Title": "消费警示",
+      "OpenTarget": "_self"
+    }
+  ],
+  "BottomImg": "bottom7",
+  "BottomPic": "",
+  "HeadPic": "",
+  "AreaCode": "440301",
+  "HeadImg": "top7",
+  "IsBox": 0,
+  "BoxQuantity": null,
+  "BoxUnit": null,
+  "IsUpgrade": null,
+  "LanguageType": "Chinese"
+}

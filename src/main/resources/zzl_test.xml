@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<suite name="测试套件">
+    <test name="测试模块">
+        <classes>
+            <!-- 生产企业登录测试类 -->
+            <class name="org.zzl.LoginTest"/>
+            <!-- 模版测试类 -->
+            <!--<class name="org.zzl.CodingtemplatesTest"/>-->
+            <!-- 生产企业信息变更测试类 -->
+            <class name="org.zzl.CompanyinfosTest"/>
+        </classes>
+    </test>
+    <listeners>
+        <!-- 添加ExtentRport监听 -->
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+        <listener class-name="test_report.ExtentTestNGIReportListener"/>
+    </listeners>
+</suite>
