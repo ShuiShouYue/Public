@@ -24,7 +24,7 @@ public class Test {
         System.out.println(result);
         String result1 = JsonFileUtils.readJson("/json/xzpm/request/a.json").toJSONString();
         System.out.println(result1);
-
+        System.out.println(result1);
 
 /*        CodingTemplates codingTemplates = new CodingTemplates();
 
